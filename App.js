@@ -1,26 +1,48 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './screens/HomeScreen';
-import GameScreen from './screens/GameScreen';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useFonts } from "expo-font";
+import LandingPage from "./screens/LandingPage";
+import QuestionOne from "./screens/QuestionOne";
+import Profile from "./screens/Profile";
+import Home from "./screens/Home";
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
+  const [loaded] = useFonts({
+    RobotoLight: require("./assets/fonts/Roboto-Light.ttf"),
+    RobotoBold: require("./assets/fonts/Roboto-Bold.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen name="HomeScreen" component={HomeScreen} 
-         options={{
-          title: null, // Set a custom title for the screen
-          headerLeft: null, // Hide the back button
-        }}/>
-        <Stack.Screen name="GameScreen" component={GameScreen} 
-         options={{
-          title: null, // Set a custom title for the screen
-           // Hide the back button
-        }}/>
+      <Stack.Navigator
+        initialRouteName="LandingPage"
+        screenOptions={{
+          headerShown: false, // Hide the header for all screens
+        }}
+      >
+        <Stack.Screen name="LandingPage" component={LandingPage} />
+        <Stack.Screen name="QuestionOne" component={QuestionOne} />
+        <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
       </Stack.Navigator>
     </NavigationContainer>
+  );
+};
+
+const HomeProfileTab = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
   );
 };
 
