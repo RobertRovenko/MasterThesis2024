@@ -7,6 +7,7 @@ import LandingPage from "./screens/LandingPage";
 import QuestionOne from "./screens/QuestionOne";
 import Profile from "./screens/Profile";
 import Home from "./screens/Home";
+import CustomLoading from "./screens/CustomLoading";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +32,7 @@ const App = () => {
       >
         <Stack.Screen name="LandingPage" component={LandingPage} />
         <Stack.Screen name="QuestionOne" component={QuestionOne} />
+        <Stack.Screen name="CustomLoading" component={CustomLoading} />
         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -39,7 +41,11 @@ const App = () => {
 
 const HomeProfileTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false, // Hide the header for all screens
+      }}
+    >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>

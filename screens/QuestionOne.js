@@ -1,10 +1,9 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import Home from "../screens/Home"; // Import your Home screen component
 
 const GoalSelection = ({ navigation }) => {
   const handleButtonPress = () => {
-    navigation.navigate("HomeProfileTab", { screen: "Home" });
+    navigation.navigate("CustomLoading");
   };
 
   return (
