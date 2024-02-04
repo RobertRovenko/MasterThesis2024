@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   progressBarContainer: {
     width: "80%",
     height: 10,
-    backgroundColor: "#00ADB5", // Teal color for the progress bar
+    backgroundColor: "gray", // Teal color for the progress bar
     borderRadius: 5,
     overflow: "hidden",
   },

@@ -14,6 +14,8 @@ import Frequency from "./screens/QuestionTwo";
 import Supplements from "./screens/Supplements";
 import { BackHandler } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Tracker from "./screens/Tracker";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,6 +65,18 @@ const HomeProfileTab = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        activeTintColor: "white",
+        inactiveTintColor: "gray",
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "gray",
+        style: {
+          borderTopWidth: 0,
+          elevation: 2,
+        },
+        tabBarStyle: {
+          backgroundColor: "#393E46", // Change this to the background color of the tab bar
+          borderTopWidth: 0,
+        },
       }}
       backBehavior="none"
     >
@@ -74,7 +88,7 @@ const HomeProfileTab = () => {
             <Ionicons
               name={focused ? "barbell" : "barbell-outline"}
               size={size}
-              color={color}
+              color={focused ? "white" : "gray"}
             />
           ),
         }}
@@ -85,9 +99,22 @@ const HomeProfileTab = () => {
         options={{
           tabBarIcon: ({ size, focused, color }) => (
             <Ionicons
-              name={focused ? "ios-nutrition" : "ios-nutrition-outline"}
+              name={focused ? "nutrition" : "nutrition-outline"}
               size={size}
-              color={color}
+              color={focused ? "white" : "gray"}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Goals"
+        component={Tracker}
+        options={{
+          tabBarIcon: ({ size, focused, color }) => (
+            <Ionicons
+              name={focused ? "trophy" : "trophy-outline"}
+              size={size}
+              color={focused ? "white" : "gray"}
             />
           ),
         }}
@@ -100,7 +127,7 @@ const HomeProfileTab = () => {
             <Ionicons
               name={focused ? "person" : "person-outline"}
               size={size}
-              color={color}
+              color={focused ? "white" : "gray"}
             />
           ),
         }}
