@@ -69,13 +69,16 @@ const HomeProfileTab = () => {
         inactiveTintColor: "gray",
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "gray",
+        autoHideHomeIndicator: true,
+
         style: {
           borderTopWidth: 0,
-          elevation: 2,
         },
+
         tabBarStyle: {
           backgroundColor: "#393E46", // Change this to the background color of the tab bar
           borderTopWidth: 0,
+          paddingVertical: 5,
         },
       }}
       backBehavior="none"

@@ -7,9 +7,9 @@ import {
   ImageBackground,
   Image,
   ScrollView,
-  SafeAreaView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Tracker = ({ navigation }) => {
   return (

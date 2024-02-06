@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Animated } from "react-native";
+import { View, Text, StyleSheet, Animated, Easing } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 const CustomLoading = ({ navigation }) => {
   const [loadingMessage, setLoadingMessage] = useState(
-    "Loading custom workout plans"
+    "Loading custom workout plans..."
   );
 
   const progress = new Animated.Value(0);
@@ -14,6 +14,7 @@ const CustomLoading = ({ navigation }) => {
     Animated.timing(progress, {
       toValue: 1,
       duration: 2000,
+      easing: Easing.linear,
       useNativeDriver: false,
     }).start(() => {
       // Redirect to HomeProfileTab after the animation completes
@@ -51,19 +52,21 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 18,
-    color: "#eeeeee", // Light text color
-    marginBottom: 10,
+    color: "white",
+    marginBottom: 50,
+    fontWeight: "bold",
+    letterSpacing: 1,
   },
   progressBarContainer: {
     width: "80%",
-    height: 10,
-    backgroundColor: "gray", // Teal color for the progress bar
-    borderRadius: 5,
+    height: 20,
+    backgroundColor: "rgba(255,255,255,0.3)", // Teal color for the progress bar
+    borderRadius: 10,
     overflow: "hidden",
   },
   progressBar: {
     height: "100%",
-    backgroundColor: "#eeeeee", // Light color for the progress bar
+    backgroundColor: "#00adb5", // Light color for the progress bar
   },
 });
 

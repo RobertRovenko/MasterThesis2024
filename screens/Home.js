@@ -1,41 +1,71 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 const Home = ({ navigation }) => {
+  const data = [
+    {
+      key: "beginner",
+      title: "Beginner",
+      image: require("../img/gymbackgroundeasy.jpg"),
+      onPress: () => handleBeginnerPress(),
+    },
+    {
+      key: "intermediate",
+      title: "Intermediate",
+      image: require("../img/gymbackgroundmedium.jpg"),
+      onPress: () => handleIntermediatePress(),
+    },
+    {
+      key: "expert",
+      title: "Expert",
+      image: require("../img/gymbackgroundhard.jpg"),
+      onPress: () => handleExpertPress(),
+    },
+  ];
+
+  const handleBeginnerPress = () => {
+    // Handle action for Beginner item
+    console.log("Beginner item pressed");
+  };
+
+  const handleIntermediatePress = () => {
+    // Handle action for Intermediate item
+    console.log("Intermediate item pressed");
+  };
+
+  const handleExpertPress = () => {
+    // Handle action for Expert item
+    console.log("Expert item pressed");
+  };
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity style={styles.section} onPress={item.onPress}>
+      <Image style={styles.imagebutton} source={item.image} />
+      <Text style={styles.text}>{item.title}</Text>
+    </TouchableOpacity>
+  );
+
   return (
-    <SafeAreaView style={styles.container}>
-      {/* Header */}
+    <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
         <Text style={styles.title}>Workout plans</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {/* Beginner Section */}
-        <View style={styles.sectionContainer}>
-          <View style={styles.section}>
-            <Text style={styles.text}>Beginner</Text>
-            {/* Add your content for Beginner section here */}
-          </View>
-        </View>
-
-        {/* Intermediate Section */}
-        <View style={styles.sectionContainer}>
-          <View style={styles.section}>
-            <Text style={styles.text}>Intermediate</Text>
-            {/* Add your content for Intermediate section here */}
-          </View>
-        </View>
-
-        {/* Expert Section */}
-        <View style={styles.sectionContainer}>
-          <View style={styles.section}>
-            <Text style={styles.text}>Expert</Text>
-            {/* Add your content for Expert section here */}
-          </View>
-        </View>
-      </ScrollView>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        contentContainerStyle={styles.scrollContainer}
+        ListEmptyComponent={null} // Add this to remove any default padding
+      />
 
       <StatusBar style="light" />
     </SafeAreaView>
@@ -46,43 +76,39 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#222831",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  header: {
+    padding: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "#fff",
     textAlign: "center",
-    marginBottom: 10,
-  },
-  header: {
-    padding: 20,
-    width: "100%",
-    alignItems: "flex-start",
+    marginBottom: 5,
+    alignSelf: "flex-start",
   },
   scrollContainer: {
-    flexGrow: 1,
-    paddingBottom: 20,
-    width: "100%",
+    paddingBottom: 0, // Change this to 0 to remove the padding
   },
-  sectionContainer: {},
   section: {
-    flexDirection: "column",
-    justifyContent: "space-around",
-    textAlign: "center",
-    // backgroundColor: "#393E46", // Remove the background color from here
+    alignItems: "center",
     marginBottom: 20,
-    paddingVertical: 20, // Adjust vertical padding as needed
-    borderWidth: 1, // Add a border for separation
-    borderColor: "#fff", // Border color
-    borderRadius: 10, // Optional: Add border radius for rounded corners
+    borderRadius: 10,
+    backgroundColor: "#30475e",
+    overflow: "hidden",
+  },
+  imagebutton: {
+    height: 150,
+    width: "100%",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
   text: {
-    width: "100%",
     color: "white",
     textAlign: "center",
-    marginBottom: 20,
+    fontSize: 18,
+    paddingVertical: 10,
   },
 });
 

@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView,
-  SafeAreaView,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import { StatusBar } from "expo-status-bar";
 
 const Profile = ({ navigation }) => {
