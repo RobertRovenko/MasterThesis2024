@@ -11,12 +11,7 @@ const Supplements = ({ navigation }) => {
         <Text style={styles.title}>Supplements</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.section}>
-          <Text style={styles.text}>Beginner</Text>
-          {/* Add your content for Beginner section here */}
-        </View>
-      </ScrollView>
+      <ScrollView contentContainerStyle={styles.scrollContainer}></ScrollView>
 
       <StatusBar style="light" />
     </SafeAreaView>

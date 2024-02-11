@@ -1,21 +1,16 @@
 import React from "react";
 import { useEffect } from "react";
-import { View, Image, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useFonts } from "expo-font";
-import LandingPage from "./screens/LandingPage";
-import QuestionOne from "./screens/QuestionOne";
 import Profile from "./screens/Profile";
 import Home from "./screens/Home";
-import CustomLoading from "./screens/CustomLoading";
-import Frequency from "./screens/QuestionTwo";
 import Supplements from "./screens/Supplements";
 import { BackHandler } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Tracker from "./screens/Tracker";
-import { SafeAreaView } from "react-native-safe-area-context";
+import LandingPage from "./screens/LandingPage";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,6 +19,8 @@ const App = () => {
   const [loaded] = useFonts({
     RobotoLight: require("./assets/fonts/Roboto-Light.ttf"),
     RobotoBold: require("./assets/fonts/Roboto-Bold.ttf"),
+    Oswald: require("./assets/fonts/Oswald-VariableFont_wght.ttf"),
+    OswaldBold: require("./assets/fonts/Oswald-Bold.ttf"),
   });
 
   if (!loaded) {
@@ -39,9 +36,6 @@ const App = () => {
         }}
       >
         <Stack.Screen name="LandingPage" component={LandingPage} />
-        <Stack.Screen name="QuestionOne" component={QuestionOne} />
-        <Stack.Screen name="Frequency" component={Frequency} />
-        <Stack.Screen name="CustomLoading" component={CustomLoading} />
         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
       </Stack.Navigator>
     </NavigationContainer>

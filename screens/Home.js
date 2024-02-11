@@ -11,61 +11,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 const Home = ({ navigation }) => {
-  const data = [
-    {
-      key: "beginner",
-      title: "Beginner",
-      image: require("../img/gymbackgroundeasy.jpg"),
-      onPress: () => handleBeginnerPress(),
-    },
-    {
-      key: "intermediate",
-      title: "Intermediate",
-      image: require("../img/gymbackgroundmedium.jpg"),
-      onPress: () => handleIntermediatePress(),
-    },
-    {
-      key: "expert",
-      title: "Expert",
-      image: require("../img/gymbackgroundhard.jpg"),
-      onPress: () => handleExpertPress(),
-    },
-  ];
-
-  const handleBeginnerPress = () => {
-    // Handle action for Beginner item
-    console.log("Beginner item pressed");
-  };
-
-  const handleIntermediatePress = () => {
-    // Handle action for Intermediate item
-    console.log("Intermediate item pressed");
-  };
-
-  const handleExpertPress = () => {
-    // Handle action for Expert item
-    console.log("Expert item pressed");
-  };
-
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.section} onPress={item.onPress}>
-      <Image style={styles.imagebutton} source={item.image} />
-      <Text style={styles.text}>{item.title}</Text>
-    </TouchableOpacity>
-  );
-
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
         <Text style={styles.title}>Workout plans</Text>
       </View>
-
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        contentContainerStyle={styles.scrollContainer}
-        ListEmptyComponent={null} // Add this to remove any default padding
-      />
 
       <StatusBar style="light" />
     </SafeAreaView>
@@ -109,6 +59,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     paddingVertical: 10,
+    fontWeight: "bold",
   },
 });
 
