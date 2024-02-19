@@ -62,13 +62,15 @@ const LandingPage = ({ navigation }) => {
               <Text style={styles.modalTitle}>Welcome to 100 Day Fitness</Text>
 
               <Text style={styles.modalText}>
-                Congratulations on taking the first step towards a life-changing
-                journey! With our app, you're embarking on a path where you'll
+                Congratulations on taking the first step towards a
+                transformative journey. {"\n"}
+                {"\n"}With our app, you're embarking on a path where you'll
                 challenge yourself, push your limits, and reap incredible
-                rewards. We offer you the ultimate workout plan complemented by
-                invaluable supplement tips, all designed to help you achieve a
-                naturally sculpted physique. Get ready to transform your body
-                and unlock your full potential!
+                rewards. We provide the ultimate workout plan coupled with
+                expert supplement tips, all aimed at helping you achieve a
+                naturally sculpted physique. {"\n"}
+                {"\n"}Get ready to transform your body and unlock your full
+                potential, all in 100 days!
               </Text>
               <View style={{ flex: 1 }} />
 
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    backgroundColor: "white",
+    backgroundColor: "#222831",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     padding: 20,
@@ -182,13 +184,18 @@ const styles = StyleSheet.create({
   },
   modalText: {
     marginBottom: 15,
-    textAlign: "center",
+    textAlign: "left",
     fontSize: 18, // Reduced font size
-    maxWidth: "85%",
+    maxWidth: "90%",
+    color: "#fff",
+    letterSpacing: 1, // Adjust the value as needed
+    lineHeight: 24, // Adjust the value as needed for desired spacing
   },
   modalTitle: {
-    marginBottom: 15,
+    marginBottom: 40,
     marginTop: 15,
+    color: "#fff",
+
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 25, // Reduced font size
@@ -197,6 +204,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#007AFF",
     padding: 20,
     borderRadius: 20,
+    fontSize: 18, // Reduced font size
     marginTop: 20, // Add margin from the "GET STARTED" button
     marginBottom: 100,
   },
