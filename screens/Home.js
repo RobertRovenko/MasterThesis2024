@@ -68,7 +68,7 @@ const Home = ({ navigation }) => {
               <Text style={styles.completeButtonText}>
                 {completedExercises[currentPage - 1]?.includes(exercise.name)
                   ? "Done"
-                  : "Mark"}
+                  : "Todo"}
               </Text>
             </TouchableOpacity>
           </TouchableOpacity>
@@ -96,14 +96,21 @@ const Home = ({ navigation }) => {
       </View>
       <View style={styles.paginationContainer}>
         <TouchableOpacity
-          style={[styles.paginationButton, { marginRight: 10 }]}
+          style={[
+            styles.paginationButton,
+            styles.prevButton,
+            { display: currentPage === 1 ? "none" : "flex" },
+          ]}
           onPress={handlePrevPage}
-          disabled={currentPage === 1}
         >
           <Text style={styles.paginationButtonText}>Previous</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.paginationButton}
+          style={[
+            styles.paginationButton,
+            styles.nextButton,
+            { display: currentPage === totalPages ? "none" : "flex" },
+          ]}
           onPress={handleNextPage}
         >
           <Text style={styles.paginationButtonText}>Next</Text>
@@ -147,6 +154,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#30475e",
     padding: 10,
+    width: "90%",
+    alignSelf: "center",
   },
   text: {
     color: "white",
@@ -168,10 +177,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   completeButton: {
-    backgroundColor: "blue",
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
   },
   completeButtonText: {
     color: "white",
@@ -182,17 +192,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 20,
+    marginBottom: 20,
   },
   paginationButton: {
-    backgroundColor: "blue",
     paddingVertical: 10,
-    paddingHorizontal: 20,
     borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 100,
   },
   paginationButtonText: {
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
+  },
+  prevButton: {
+    backgroundColor: "blue",
+    marginRight: 10,
+  },
+  nextButton: {
+    backgroundColor: "blue",
   },
 });
 
