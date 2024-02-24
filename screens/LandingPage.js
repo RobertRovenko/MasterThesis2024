@@ -21,14 +21,14 @@ const LandingPage = ({ navigation }) => {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../img/landingimage.png")}
+      source={require("../img/landingimage2.jpg")}
     >
       <View style={styles.container}>
         <Text style={styles.textLogo}>100 Day{"\n"}Fitness</Text>
 
         <Text style={styles.title}></Text>
         <Text style={styles.description}>
-          The best researched workout programs, diets, supplements and tips!
+          The best researched workout program, supplements and tips!
         </Text>
 
         <View style={{ flex: 1 }} />
@@ -62,8 +62,8 @@ const LandingPage = ({ navigation }) => {
               <Text style={styles.modalTitle}>Welcome to 100 Day Fitness</Text>
 
               <Text style={styles.modalText}>
-                Congratulations on taking the first step towards a
-                transformative journey. {"\n"}
+                Congratulations on taking the first step towards your
+                transformation! {"\n"}
                 {"\n"}With our app, you're embarking on a path where you'll
                 challenge yourself, push your limits, and reap incredible
                 rewards. We provide the ultimate workout plan coupled with
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: "rgba(0, 5, 1, 0.6)", // Semi-transparent background overlay
+    backgroundColor: "rgba(5, 15, 10, 0.85)", // Semi-transparent background overlay
     alignItems: "center",
     justifyContent: "center",
   },
@@ -136,15 +136,17 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     marginBottom: 20, // Increased margin
+    width: "80%",
   },
   aboutButton: {
-    backgroundColor: "transparent", // Changed color to transparent
+    backgroundColor: "rgba(255, 255, 255, 0.1)", // Semi-transparent white color
     borderWidth: 2, // Add border
     borderColor: "#fff", // White border color
-    padding: 15, // Reduced padding
+    padding: 20, // Reduced padding
     borderRadius: 20,
     marginTop: 0, // Add margin from the "GET STARTED" button
     marginBottom: 125,
+    width: "80%",
   },
   buttonText: {
     color: "#fff",
@@ -152,6 +154,7 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoBold",
     letterSpacing: 2, // Adjust the value as needed
     marginHorizontal: 10, // Adjust the horizontal margin as needed
+    alignSelf: "center",
   },
   buttonTextAbout: {
     color: "#fff",
@@ -159,6 +162,7 @@ const styles = StyleSheet.create({
     letterSpacing: 2, // Adjust the value as needed
     marginHorizontal: 10, // Adjust the horizontal margin as needed
     fontSize: 14,
+    alignSelf: "center",
   },
   centeredView: {
     flex: 1,
@@ -206,7 +210,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 18, // Reduced font size
     marginTop: 20, // Add margin from the "GET STARTED" button
-    marginBottom: 100,
+    marginBottom: 105,
+    width: "80%",
   },
   closeButtonText: {
     color: "#fff",
