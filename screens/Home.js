@@ -1,20 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   View,
   Text,
   StyleSheet,
-  FlatList,
+  PanResponder,
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import workoutProgram from "../components/workoutPrograms";
+import NumberedButtons from "../components/calendarHome";
 
 const Home = ({ navigation }) => {
   const [completedExercises, setCompletedExercises] = useState({});
-  const [currentPage, setCurrentPage] = useState(1);
-  const workoutsPerPage = 1;
-  const totalPages = Math.ceil(workoutProgram.length / workoutsPerPage);
+  const [currentPage, setCurrentPage] = useState(0); // Current page index
+  const totalPages = workoutProgram.length;
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderRelease: (_, gestureState) => {
+        const { dx } = gestureState;
+        // Swipe right if not on the first page
+        if (dx > 50) {
+          setCurrentPage((prevPage) =>
+            prevPage > 0 ? prevPage - 1 : prevPage
+          );
+        }
+        // Swipe left if not on the last page
+        else if (dx < -50) {
+          setCurrentPage((prevPage) =>
+            prevPage < totalPages - 1 ? prevPage + 1 : prevPage
+          );
+        }
+      },
+    })
+  ).current;
 
   const markExerciseComplete = (dayIndex, exerciseName) => {
     setCompletedExercises((prevCompletedExercises) => {
@@ -31,22 +52,16 @@ const Home = ({ navigation }) => {
   };
 
   useEffect(() => {
-    const currentDayIndex = (currentPage - 1) * workoutsPerPage;
-    const currentDay = workoutProgram[currentDayIndex].day;
-
-    // Removed condition that checks if all exercises for the current day are completed
+    // Your effect logic here
   }, [completedExercises, currentPage]);
 
-  const renderWorkouts = ({ item }) => {
+  const renderWorkout = () => {
+    const workout = workoutProgram[currentPage];
     return (
-      <View key={item.day} style={styles.section}>
-        <Text style={styles.text}>{item.day}</Text>
-        {item.exercises.map((exercise, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => markExerciseComplete(currentPage - 1, exercise.name)}
-            style={styles.exerciseContainer}
-          >
+      <View style={styles.section}>
+        <Text style={styles.text}>{workout.day}</Text>
+        {workout.exercises.map((exercise, index) => (
+          <View key={index} style={styles.exerciseContainer}>
             <Text style={styles.exerciseText}>
               {exercise.name} - Sets: {exercise.sets}, Reps: {exercise.reps}
             </Text>
@@ -54,77 +69,48 @@ const Home = ({ navigation }) => {
               style={[
                 styles.completeButton,
                 {
-                  backgroundColor: completedExercises[
-                    currentPage - 1
-                  ]?.includes(exercise.name)
+                  backgroundColor: completedExercises[currentPage]?.includes(
+                    exercise.name
+                  )
                     ? "green"
                     : "blue",
                 },
               ]}
-              onPress={() =>
-                markExerciseComplete(currentPage - 1, exercise.name)
-              }
+              onPress={() => markExerciseComplete(currentPage, exercise.name)}
             >
               <Text style={styles.completeButtonText}>
-                {completedExercises[currentPage - 1]?.includes(exercise.name)
+                {completedExercises[currentPage]?.includes(exercise.name)
                   ? "Done"
                   : "Todo"}
               </Text>
             </TouchableOpacity>
-          </TouchableOpacity>
+          </View>
         ))}
       </View>
     );
   };
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
+  const handleButtonPress = (number) => {
+    setCurrentPage(number);
   };
 
   return (
-    <SafeAreaView style={styles.container} edges={["top"]}>
+    <SafeAreaView
+      style={styles.container}
+      {...panResponder.panHandlers}
+      edges={["top"]}
+    >
       <View style={styles.header}>
         <Text style={styles.title}>Workout plans</Text>
       </View>
-      <View style={styles.paginationContainer}>
-        <TouchableOpacity
-          style={[
-            styles.paginationButton,
-            styles.prevButton,
-            { display: currentPage === 1 ? "none" : "flex" },
-          ]}
-          onPress={handlePrevPage}
-        >
-          <Text style={styles.paginationButtonText}>Previous</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styles.paginationButton,
-            styles.nextButton,
-            { display: currentPage === totalPages ? "none" : "flex" },
-          ]}
-          onPress={handleNextPage}
-        >
-          <Text style={styles.paginationButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
-      <FlatList
-        data={workoutProgram.slice(
-          (currentPage - 1) * workoutsPerPage,
-          currentPage * workoutsPerPage
-        )}
-        renderItem={renderWorkouts}
-        keyExtractor={(item) => item.day}
-        contentContainerStyle={styles.scrollContainer}
+      <NumberedButtons
+        currentPage={currentPage}
+        totalPages={totalPages}
+        workoutProgram={workoutProgram}
+        onPress={handleButtonPress}
       />
+
+      {renderWorkout()}
+
       <StatusBar style="light" />
     </SafeAreaView>
   );
@@ -146,9 +132,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     alignSelf: "flex-start",
   },
-  scrollContainer: {
-    paddingBottom: 20,
-  },
   section: {
     marginBottom: 20,
     borderRadius: 10,
@@ -168,7 +151,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 20,
     marginBottom: 10,
   },
   exerciseText: {
@@ -187,31 +169,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
-  },
-  paginationContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  paginationButton: {
-    paddingVertical: 10,
-    borderRadius: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    width: 100,
-  },
-  paginationButtonText: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  prevButton: {
-    backgroundColor: "blue",
-    marginRight: 10,
-  },
-  nextButton: {
-    backgroundColor: "blue",
   },
 });
 
