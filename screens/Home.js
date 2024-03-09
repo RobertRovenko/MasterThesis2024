@@ -15,6 +15,7 @@ const Home = ({ navigation }) => {
   const [completedExercises, setCompletedExercises] = useState({});
   const [currentPage, setCurrentPage] = useState(0); // Current page index
   const totalPages = workoutProgram.length;
+  const [currentPage2, setCurrentPage2] = useState(0); // Define currentPage2 and setCurrentPage2
 
   const panResponder = useRef(
     PanResponder.create({
@@ -36,7 +37,26 @@ const Home = ({ navigation }) => {
       },
     })
   ).current;
-
+  const panResponder2 = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderRelease: (_, gestureState) => {
+        const { dx } = gestureState;
+        // Swipe right if not on the first page
+        if (dx > 50) {
+          setCurrentPage2((prevPage) =>
+            prevPage > 0 ? prevPage - 1 : prevPage
+          );
+        }
+        // Swipe left if not on the last page
+        else if (dx < -50) {
+          setCurrentPage2((prevPage) =>
+            prevPage < totalPages2 - 1 ? prevPage + 1 : prevPage
+          );
+        }
+      },
+    })
+  ).current;
   const markExerciseComplete = (dayIndex, exerciseName) => {
     setCompletedExercises((prevCompletedExercises) => {
       const updatedCompletedExercises = { ...prevCompletedExercises };
@@ -102,11 +122,15 @@ const Home = ({ navigation }) => {
       <View style={styles.header}>
         <Text style={styles.title}>Workout plans</Text>
       </View>
+
       <NumberedButtons
-        currentPage={currentPage}
+        currentPage={currentPage2} // Pass the currentPage prop
         totalPages={totalPages}
         workoutProgram={workoutProgram}
-        onPress={handleButtonPress}
+        onPress={(index, currentPage) => {
+          setCurrentPage2(currentPage); // Update the currentPage state in your parent component
+          handleButtonPress(index); // Call the handleButtonPress function from the parent component
+        }}
       />
 
       {renderWorkout()}
