@@ -37,26 +37,7 @@ const Home = ({ navigation }) => {
       },
     })
   ).current;
-  const panResponder2 = useRef(
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderRelease: (_, gestureState) => {
-        const { dx } = gestureState;
-        // Swipe right if not on the first page
-        if (dx > 50) {
-          setCurrentPage2((prevPage) =>
-            prevPage > 0 ? prevPage - 1 : prevPage
-          );
-        }
-        // Swipe left if not on the last page
-        else if (dx < -50) {
-          setCurrentPage2((prevPage) =>
-            prevPage < totalPages2 - 1 ? prevPage + 1 : prevPage
-          );
-        }
-      },
-    })
-  ).current;
+
   const markExerciseComplete = (dayIndex, exerciseName) => {
     setCompletedExercises((prevCompletedExercises) => {
       const updatedCompletedExercises = { ...prevCompletedExercises };
@@ -120,7 +101,7 @@ const Home = ({ navigation }) => {
       edges={["top"]}
     >
       <View style={styles.header}>
-        <Text style={styles.title}>Workout plans</Text>
+        <Text style={styles.title}>Workout plan</Text>
       </View>
 
       <NumberedButtons

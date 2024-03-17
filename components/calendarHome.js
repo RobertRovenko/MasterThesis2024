@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   View,
   Text,
@@ -7,12 +7,8 @@ import {
   PanResponder,
 } from "react-native";
 
-const NumberedButtons = ({
-  currentPage,
-  totalPages,
-  workoutProgram,
-  onPress,
-}) => {
+const NumberedButtons = ({ totalPages, workoutProgram, onPress }) => {
+  const [currentPage, setCurrentPage] = useState(0); // State to manage current page
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -20,12 +16,12 @@ const NumberedButtons = ({
         const { dx } = gestureState;
         const swipeThreshold = 50;
         if (dx > swipeThreshold && currentPage > 0) {
-          onPress(currentPage - 1); // Go to previous set of 7 days
+          setCurrentPage(currentPage - 1); // Update current page to previous
         } else if (
           dx < -swipeThreshold &&
           currentPage < Math.ceil(totalPages / 7) - 1
         ) {
-          onPress(currentPage + 1); // Go to next set of 7 days
+          setCurrentPage(currentPage + 1); // Update current page to next
         }
       },
     })

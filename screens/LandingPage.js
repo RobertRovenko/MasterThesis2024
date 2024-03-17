@@ -35,7 +35,7 @@ const LandingPage = ({ navigation }) => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("HomeProfileTab")} // Replace with the correct navigation route
+          onPress={() => navigation.navigate("Home")} // Replace with the correct navigation route
         >
           <Text style={styles.buttonText}>GET STARTED</Text>
         </TouchableOpacity>

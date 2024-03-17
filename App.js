@@ -36,7 +36,9 @@ const App = () => {
         }}
       >
         <Stack.Screen name="LandingPage" component={LandingPage} />
-        <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
+        <Stack.Screen name="Home" component={Home} />
+        {/*         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
+         */}
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -55,7 +57,7 @@ const HomeProfileTab = () => {
     return () => backHandler.remove();
   }, []);
 
-  return (
+  /*  return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
@@ -130,7 +132,7 @@ const HomeProfileTab = () => {
         }}
       />
     </Tab.Navigator>
-  );
+  ); */
 };
 
 export default App;
