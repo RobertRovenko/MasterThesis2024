@@ -36,7 +36,14 @@ const App = () => {
         }}
       >
         <Stack.Screen name="LandingPage" component={LandingPage} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerLeft: null, // Disable back navigation
+            gestureEnabled: false,
+          }}
+        />
         {/*         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
          */}
       </Stack.Navigator>
