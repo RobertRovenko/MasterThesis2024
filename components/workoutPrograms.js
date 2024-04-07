@@ -2,9 +2,15 @@ const workoutProgram = [
   {
     day: "Day 1: Push",
     exercises: [
+      { name: "Incline Dumbell Bench", sets: 4, reps: "6-8", tip: "Heavy" },
+      {
+        name: "Incline Smith Machine Bench",
+        sets: 4,
+        reps: "10-12",
+        tip: "Light",
+      },
+      { name: "Chest Press", sets: 3, reps: "8-10" },
       { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
       { name: "Lateral Raises", sets: 3, reps: 12 },
       { name: "DB Shoulder Press", sets: 3, reps: 10 },
       { name: "Rope Extension", sets: 3, reps: 12 },
@@ -14,9 +20,9 @@ const workoutProgram = [
   {
     day: "Day 2: Pull",
     exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
       { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
       { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
+      { name: "BB Row", sets: 3, reps: 10 },
       { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
       { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
       { name: "Cable BB Curl", sets: 3, reps: 10 },

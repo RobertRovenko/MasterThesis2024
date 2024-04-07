@@ -23,6 +23,11 @@ const App = () => {
     OswaldBold: require("./assets/fonts/Oswald-Bold.ttf"),
   });
 
+  const backHandler = BackHandler.addEventListener("hardwareBackPress", () => {
+    // Return true to prevent default behavior (going back)
+    return true;
+  });
+
   if (!loaded) {
     return null;
   }
@@ -50,7 +55,10 @@ const App = () => {
     </NavigationContainer>
   );
 };
-const HomeProfileTab = () => {
+
+export default App;
+
+/* const HomeProfileTab = () => {
   useEffect(() => {
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
@@ -62,9 +70,9 @@ const HomeProfileTab = () => {
 
     // Cleanup the event listener when the component unmounts
     return () => backHandler.remove();
-  }, []);
+  }, []); */
 
-  /*  return (
+/*  return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
@@ -140,6 +148,4 @@ const HomeProfileTab = () => {
       />
     </Tab.Navigator>
   ); */
-};
-
-export default App;
+/* }; */
