@@ -9,6 +9,7 @@ import {
   Dimensions,
   PanResponder,
   Animated,
+  Image,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
@@ -92,6 +93,10 @@ const LandingPage = ({ navigation }) => {
             {...panResponder.panHandlers}
           >
             <View style={[styles.modalView, { height: modalHeight }]}>
+              <Image
+                style={styles.slider}
+                source={require("../icons/sliderr.png")}
+              />
               <Text style={styles.modalTitle}>Welcome to 100 Day Fitness</Text>
               <Text style={styles.modalText}>
                 Congratulations on taking the first step towards your
@@ -211,7 +216,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     marginBottom: 40,
-    marginTop: 15,
+    marginTop: 20,
     color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
@@ -233,6 +238,11 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoBold",
     letterSpacing: 2, // Adjust the value as needed
     fontSize: 14,
+  },
+  slider: {
+    width: "40%",
+    height: 5,
+    borderRadius: 5,
   },
 });
 
