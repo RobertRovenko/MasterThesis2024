@@ -6,6 +6,7 @@ import {
   PanResponder,
   TouchableOpacity,
   ScrollView,
+  ImageBackground,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -59,58 +60,67 @@ const Home = ({}) => {
     });
   };
 
-  const renderWorkout = () => {
+  const renderWorkoutCard = () => {
     const workout = workoutProgram[currentPage];
     return (
-      <View style={styles.section}>
+      <ScrollView
+        style={styles.section}
+        {...panResponder.panHandlers} // Attach panHandlers to ScrollView
+      >
         <Text style={styles.text}>{workout.day}</Text>
         {workout.exercises.map((exercise, index) => (
-          <View key={index} style={styles.exerciseContainer}>
-            <View style={{ flexDirection: "column" }}>
-              <Text style={styles.exerciseText}>{exercise.name}</Text>
-              <Text style={styles.exerciseText}>
-                Sets: {exercise.sets}, Reps: {exercise.reps}
-              </Text>
-            </View>
-            <TouchableOpacity
-              style={[
-                styles.completeButton,
-                {
-                  backgroundColor: completedExercises[currentPage]?.includes(
-                    exercise.name
-                  )
-                    ? "green"
-                    : "blue",
-                },
-              ]}
-              onPress={() => markExerciseComplete(currentPage, exercise.name)}
+          <View key={index} style={styles.cardContainer}>
+            <ImageBackground
+              source={require("../img/gymbackgroundmedium.jpg")}
+              style={styles.cardImage}
             >
-              <Text style={styles.completeButtonText}>
-                {completedExercises[currentPage]?.includes(exercise.name)
-                  ? "Done"
-                  : "Todo"}
-              </Text>
-            </TouchableOpacity>
+              <View style={styles.overlay}>
+                <View style={styles.exerciseInfo}>
+                  <View>
+                    <Text style={styles.exerciseName}>{exercise.name}</Text>
+                    <Text style={styles.exerciseDetails}>
+                      Sets: {exercise.sets}, Reps: {exercise.reps}
+                    </Text>
+                  </View>
+                  <TouchableOpacity
+                    style={[
+                      styles.completeButton,
+                      {
+                        backgroundColor: completedExercises[
+                          currentPage
+                        ]?.includes(exercise.name)
+                          ? "green"
+                          : "blue",
+                      },
+                    ]}
+                    onPress={() =>
+                      markExerciseComplete(currentPage, exercise.name)
+                    }
+                  >
+                    <Text style={styles.completeButtonText}>
+                      {completedExercises[currentPage]?.includes(exercise.name)
+                        ? "Done"
+                        : "Todo"}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </ImageBackground>
           </View>
         ))}
-      </View>
+      </ScrollView>
     );
   };
 
   return (
-    <SafeAreaView
-      style={styles.container}
-      {...panResponder.panHandlers}
-      edges={["top"]}
-    >
+    <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
         <Text style={styles.title}>100 Day Fitness</Text>
         <Text style={styles.title2}>{"\n"}</Text>
-
         <Text style={styles.title2}>Always go to failure!</Text>
       </View>
 
-      {renderWorkout()}
+      {renderWorkoutCard()}
 
       <StatusBar style="light" />
     </SafeAreaView>
@@ -121,6 +131,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#222831",
+  },
+  cardContainer: {
+    marginVertical: 10,
+    borderRadius: 10,
+    overflow: "hidden",
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    backgroundColor: "white",
+  },
+  cardImage: {
+    width: "100%",
+    height: 200,
+  },
+  exerciseInfo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  exerciseName: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white",
+  },
+  exerciseDetails: {
+    color: "white",
+    fontSize: 16,
   },
   header: {
     padding: 20,
