@@ -113,6 +113,7 @@ const LandingPage = ({ navigation }) => {
           </Animated.View>
         </Modal>
       </View>
+      <StatusBar style="light" />
     </ImageBackground>
   );
 };

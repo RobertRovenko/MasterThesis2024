@@ -7,20 +7,25 @@ import {
   TouchableOpacity,
   ScrollView,
   ImageBackground,
+  Dimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import workoutProgram from "../components/workoutPrograms";
+import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
 
 const Home = ({}) => {
   const [completedExercises, setCompletedExercises] = useState({});
   const [currentPage, setCurrentPage] = useState(0); // Current page index
 
   const totalPages = workoutProgram.length;
+  const screenHeight = Dimensions.get("window").height;
+  const navigation = useNavigation(); // Initialize useNavigation hook
 
   const panResponder = useRef(
     PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponder: (evt, gestureState) => true,
+      onPanResponderMove: (evt, gestureState) => {},
       onPanResponderRelease: (_, gestureState) => {
         const { dx } = gestureState;
         // Swipe right if not on the first page
@@ -38,6 +43,8 @@ const Home = ({}) => {
       },
     })
   ).current;
+
+  const maxHeight = screenHeight * 0.6;
 
   const markExerciseComplete = (dayIndex, exerciseName) => {
     setCompletedExercises((prevCompletedExercises) => {
@@ -64,52 +71,63 @@ const Home = ({}) => {
     const workout = workoutProgram[currentPage];
     return (
       <ScrollView
-        style={styles.section}
-        {...panResponder.panHandlers} // Attach panHandlers to ScrollView
+        style={[styles.scrollView, { maxHeight }]} // Set maximum height to 400 (adjust as needed)
+        showsVerticalScrollIndicator={false}
       >
         <Text style={styles.text}>{workout.day}</Text>
         {workout.exercises.map((exercise, index) => (
-          <View key={index} style={styles.cardContainer}>
-            <ImageBackground
-              source={require("../img/gymbackgroundmedium.jpg")}
-              style={styles.cardImage}
-            >
-              <View style={styles.overlay}>
-                <View style={styles.exerciseInfo}>
-                  <View>
-                    <Text style={styles.exerciseName}>{exercise.name}</Text>
-                    <Text style={styles.exerciseDetails}>
-                      Sets: {exercise.sets}, Reps: {exercise.reps}
-                    </Text>
+          <TouchableOpacity
+            key={index}
+            onPress={() => navigateToExerciseDetails(exercise)}
+          >
+            <View key={index} style={styles.cardContainer}>
+              <ImageBackground
+                source={require("../img/gymbackgroundhard.jpg")}
+                style={styles.cardImage}
+              >
+                <View style={styles.overlay}>
+                  <View style={styles.exerciseInfo}>
+                    <View>
+                      <Text style={styles.exerciseName}>{exercise.name}</Text>
+                      <Text style={styles.exerciseDetails}>
+                        Sets: {exercise.sets}, Reps: {exercise.reps}
+                      </Text>
+                    </View>
+                    <TouchableOpacity
+                      style={[
+                        styles.completeButton,
+                        {
+                          backgroundColor: completedExercises[
+                            currentPage
+                          ]?.includes(exercise.name)
+                            ? "green"
+                            : "blue",
+                        },
+                      ]}
+                      onPress={() =>
+                        markExerciseComplete(currentPage, exercise.name)
+                      }
+                    >
+                      <Text style={styles.completeButtonText}>
+                        {completedExercises[currentPage]?.includes(
+                          exercise.name
+                        )
+                          ? "Done"
+                          : "Todo"}
+                      </Text>
+                    </TouchableOpacity>
                   </View>
-                  <TouchableOpacity
-                    style={[
-                      styles.completeButton,
-                      {
-                        backgroundColor: completedExercises[
-                          currentPage
-                        ]?.includes(exercise.name)
-                          ? "green"
-                          : "blue",
-                      },
-                    ]}
-                    onPress={() =>
-                      markExerciseComplete(currentPage, exercise.name)
-                    }
-                  >
-                    <Text style={styles.completeButtonText}>
-                      {completedExercises[currentPage]?.includes(exercise.name)
-                        ? "Done"
-                        : "Todo"}
-                    </Text>
-                  </TouchableOpacity>
                 </View>
-              </View>
-            </ImageBackground>
-          </View>
+              </ImageBackground>
+            </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     );
+  };
+
+  const navigateToExerciseDetails = (exercise) => {
+    navigation.navigate("WorkoutDetails", { exercise });
   };
 
   return (
@@ -117,10 +135,21 @@ const Home = ({}) => {
       <View style={styles.header}>
         <Text style={styles.title}>100 Day Fitness</Text>
         <Text style={styles.title2}>{"\n"}</Text>
-        <Text style={styles.title2}>Always go to failure!</Text>
       </View>
 
       {renderWorkoutCard()}
+
+      <View style={styles.bottomView} {...panResponder.panHandlers}>
+        <Text
+          style={{
+            alignSelf: "center",
+            color: "white",
+            paddingVertical: "15%",
+          }}
+        >
+          ← Swipe between workouts! →
+        </Text>
+      </View>
 
       <StatusBar style="light" />
     </SafeAreaView>
@@ -220,6 +249,9 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
+  },
+  bottomView: {
+    flex: 0.3, // Take 30% of the available height
   },
 });
 

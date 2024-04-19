@@ -1,13 +1,26 @@
 const workoutProgram = [
   {
     day: "Day 1: Push",
+    // Import the image directly
     exercises: [
-      { name: "Incline Dumbell Bench", sets: 4, reps: "6-8", tip: "Heavy" },
+      {
+        image: require("../demonstration/inclinedumbellbench.jpeg"),
+        name: "Incline Dumbell Bench",
+        sets: 4,
+        reps: "6-8",
+        tip: "Heavy Reps",
+        description:
+          "Incline Dumblell Bench is a free weight excersise that trains the upper chest which often is the most lacking.",
+        replacement:
+          "The normal Incline Bench Press is a great alternative to the dumbell variant. The only difference is some balance and the posibility to isolate each arm",
+        isDone: false,
+      },
       {
         name: "Incline Smith Machine Bench",
         sets: 4,
         reps: "10-12",
         tip: "Light",
+        image: require("../img/gymbackgroundeasy.jpg"),
       },
       { name: "Chest Press", sets: 3, reps: "8-10" },
       { name: "Pec Deck", sets: 3, reps: 10 },

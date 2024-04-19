@@ -11,6 +11,7 @@ import { BackHandler } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Tracker from "./screens/Tracker";
 import LandingPage from "./screens/LandingPage";
+import WorkoutDetails from "./screens/WorkoutDetails";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +50,15 @@ const App = () => {
             gestureEnabled: false,
           }}
         />
+        <Stack.Screen
+          name="WorkoutDetails"
+          component={WorkoutDetails}
+          options={{
+            headerLeft: null, // Disable back navigation
+            gestureEnabled: false,
+          }}
+        />
+
         {/*         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
          */}
       </Stack.Navigator>
