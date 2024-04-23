@@ -29,7 +29,6 @@ const WorkoutDetails = () => {
         <TouchableOpacity onPress={handleBackPress}>
           <Text style={styles.backbutton}>←</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>100 Day Fitness</Text>
       </SafeAreaView>
       <ScrollView style={styles.scrollView}>
         <View style={styles.exerciseDetailsContainer}>
@@ -58,12 +57,15 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row", // Arrange children horizontally
-    padding: 20,
+    backgroundColor: "white",
+    height: 350,
+    paddingLeft: 20,
+    zIndex: -2,
   },
   title: {
     fontSize: 26,
     fontWeight: "bold",
-    color: "#fff",
+    color: "black",
     alignSelf: "center", // Center align vertically
     textAlign: "center",
     marginBottom: 5,
@@ -76,15 +78,17 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
   },
   image: {
-    height: 400,
-    width: "100%",
+    height: 300,
+    width: "75%",
     position: "absolute",
     zIndex: -1, // Ensure the image is behind other content
+    alignSelf: "center",
   },
+  imageContainer: {},
   exerciseDetailsContainer: {
     flex: 1,
-    paddingTop: "50%",
-    zIndex: -2, // Ensure the image is behind other content
+    paddingTop: "15%",
+    zIndex: -5, // Ensure the image is behind other content
     alignItems: "center",
     paddingVertical: 20,
     paddingHorizontal: 10,
@@ -95,9 +99,10 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   backbutton: {
-    color: "white",
+    color: "black",
     fontSize: 40,
     alignSelf: "flex-start",
+    zIndex: 0,
   },
   exerciseName: {
     fontSize: 24,

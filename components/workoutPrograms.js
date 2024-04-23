@@ -4,7 +4,7 @@ const workoutProgram = [
     // Import the image directly
     exercises: [
       {
-        image: require("../demonstration/inclinedumbellbench.jpeg"),
+        image: require("../demonstration/inclineDumbellBench.jpg"),
         name: "Incline Dumbell Bench",
         sets: 4,
         reps: "6-8",

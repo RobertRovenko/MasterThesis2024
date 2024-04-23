@@ -59,8 +59,7 @@ const App = () => {
           }}
         />
 
-        {/*         <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />
-         */}
+        {/* <Stack.Screen name="HomeProfileTab" component={HomeProfileTab} />  */}
       </Stack.Navigator>
     </NavigationContainer>
   );
