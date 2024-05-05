@@ -13,6 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import workoutProgram from "../components/workoutPrograms";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
+import { FontAwesome } from "@expo/vector-icons"; // assuming you're using Expo
 
 const Home = ({}) => {
   const [completedExercises, setCompletedExercises] = useState({});
@@ -44,7 +45,7 @@ const Home = ({}) => {
     })
   ).current;
 
-  const maxHeight = screenHeight * 0.6;
+  const maxHeight = screenHeight * 0.65;
 
   const markExerciseComplete = (dayIndex, exerciseName) => {
     setCompletedExercises((prevCompletedExercises) => {
@@ -70,59 +71,60 @@ const Home = ({}) => {
   const renderWorkoutCard = () => {
     const workout = workoutProgram[currentPage];
     return (
-      <ScrollView
-        style={[styles.scrollView, { maxHeight }]} // Set maximum height to 400 (adjust as needed)
-        showsVerticalScrollIndicator={false}
-      >
+      <View>
         <Text style={styles.text}>{workout.day}</Text>
-        {workout.exercises.map((exercise, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => navigateToExerciseDetails(exercise)}
-          >
-            <View key={index} style={styles.cardContainer}>
-              <ImageBackground
-                source={require("../img/gymbackgroundhard.jpg")}
-                style={styles.cardImage}
-              >
-                <View style={styles.overlay}>
-                  <View style={styles.exerciseInfo}>
-                    <View>
-                      <Text style={styles.exerciseName}>{exercise.name}</Text>
-                      <Text style={styles.exerciseDetails}>
-                        Sets: {exercise.sets}, Reps: {exercise.reps}
-                      </Text>
+        <ScrollView
+          style={[styles.scrollView, { maxHeight }]} // Set maximum height to 400 (adjust as needed)
+          showsVerticalScrollIndicator={false}
+        >
+          {workout.exercises.map((exercise, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => navigateToExerciseDetails(exercise)}
+            >
+              <View key={index} style={styles.cardContainer}>
+                <View style={styles.cardImage}>
+                  <View style={styles.overlay}>
+                    <View style={styles.exerciseInfo}>
+                      <View style={{ marginLeft: 20 }}>
+                        <Text style={styles.exerciseName}>{exercise.name}</Text>
+                        <Text style={styles.exerciseDetails}>
+                          Sets: {exercise.sets} · Reps: {exercise.reps}
+                        </Text>
+                      </View>
+                      <TouchableOpacity
+                        style={[styles.completeButton]}
+                        onPress={() =>
+                          markExerciseComplete(currentPage, exercise.name)
+                        }
+                      >
+                        <View style={{ padding: 10 }}>
+                          {/* Adjust padding to increase touch area */}
+                          {completedExercises[currentPage]?.includes(
+                            exercise.name
+                          ) ? (
+                            <FontAwesome
+                              name="check-square"
+                              size={30}
+                              color="white"
+                            /> // Checked checkbox icon
+                          ) : (
+                            <FontAwesome
+                              name="square"
+                              size={30}
+                              color="white"
+                            /> // Empty checkbox icon
+                          )}
+                        </View>
+                      </TouchableOpacity>
                     </View>
-                    <TouchableOpacity
-                      style={[
-                        styles.completeButton,
-                        {
-                          backgroundColor: completedExercises[
-                            currentPage
-                          ]?.includes(exercise.name)
-                            ? "green"
-                            : "blue",
-                        },
-                      ]}
-                      onPress={() =>
-                        markExerciseComplete(currentPage, exercise.name)
-                      }
-                    >
-                      <Text style={styles.completeButtonText}>
-                        {completedExercises[currentPage]?.includes(
-                          exercise.name
-                        )
-                          ? "Done"
-                          : "Todo"}
-                      </Text>
-                    </TouchableOpacity>
                   </View>
                 </View>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
     );
   };
 
@@ -142,9 +144,10 @@ const Home = ({}) => {
       <View style={styles.bottomView} {...panResponder.panHandlers}>
         <Text
           style={{
-            alignSelf: "center",
-            color: "white",
-            paddingVertical: "15%",
+            position: "absolute",
+            bottom: 40,
+            left: "25%", // Center horizontally
+            color: "white", // Text color
           }}
         >
           ← Swipe between workouts! →
@@ -159,7 +162,7 @@ const Home = ({}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#222831",
+    backgroundColor: "#1D1A2F",
   },
   cardContainer: {
     marginVertical: 10,
@@ -173,25 +176,32 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    backgroundColor: "white",
+    backgroundColor: "black",
+  },
+  scrollView: {
+    marginHorizontal: 10,
   },
   cardImage: {
     width: "100%",
-    height: 200,
+    height: 80,
+    backgroundColor: "#3E3A52",
   },
   exerciseInfo: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingVertical: 10, // Add vertical padding
   },
   exerciseName: {
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
+    flexWrap: "wrap",
   },
   exerciseDetails: {
     color: "white",
     fontSize: 16,
+    paddingTop: 10,
   },
   header: {
     padding: 20,
@@ -239,11 +249,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   completeButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 5, // Add horizontal padding
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
+    paddingTop: 5, // Add vertical padding
   },
   completeButtonText: {
     color: "white",
@@ -251,7 +261,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   bottomView: {
-    flex: 0.3, // Take 30% of the available height
+    flex: 1,
   },
 });
 
