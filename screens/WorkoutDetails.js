@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,44 +6,79 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  PanResponder,
 } from "react-native";
-import { useRoute } from "@react-navigation/native"; // Import useRoute hook
+import { useRoute } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
+import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/FontAwesome"; // Import FontAwesome icon component
 
 const WorkoutDetails = () => {
-  const route = useRoute(); // Initialize useRoute hook to access route parameters
-  const { exercise } = route.params; // Extract the exercise parameter from route
-  const navigation = useNavigation(); // Initialize useNavigation hook
+  const route = useRoute();
+  const { exercise } = route.params;
+  const navigation = useNavigation();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [exercise.image1, exercise.image2]; // Assuming exercise.image1 and exercise.image2 are the two images
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Switch to the next image
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Switch images every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex, images.length]);
 
   const handleBackPress = () => {
-    navigation.goBack(); // Navigate back to the previous screen
+    navigation.goBack();
+  };
+
+  const [expandedDescription, setExpandedDescription] = useState(true);
+
+  const toggleDescription = () => {
+    setExpandedDescription(!expandedDescription);
+  };
+
+  const [expandedReplacement, setExpandedReplacement] = useState(true);
+
+  const toggleReplacement = () => {
+    setExpandedReplacement(!expandedReplacement);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={exercise.image} style={styles.image} />
+        <Image source={images[currentImageIndex]} style={styles.image} />
       </View>
       <SafeAreaView style={styles.header}>
         <TouchableOpacity onPress={handleBackPress}>
-          <Text style={styles.backbutton}>←</Text>
+          <View style={styles.circle}>
+            <Icon style={styles.backbutton} name="chevron-left" color="black" />
+          </View>
         </TouchableOpacity>
       </SafeAreaView>
       <ScrollView style={styles.scrollView}>
         <View style={styles.exerciseDetailsContainer}>
           <Text style={styles.exerciseName}>{exercise.name}</Text>
           <Text style={styles.detailsText}>
-            Sets: {exercise.sets}, Reps: {exercise.reps}
+            Sets: {exercise.sets} • Reps: {exercise.reps}
           </Text>
           <Text style={styles.detailsText}>{exercise.tip}</Text>
-          <Text style={styles.detailsText}>{exercise.description}</Text>
-          <Text style={styles.detailsText}>{exercise.replacement}</Text>
-          <Text style={styles.detailsText}>
-            {exercise.isDone
-              ? "You have completed this exercise!"
-              : "You have not completed this exercise yet!"}
-          </Text>
+          <TouchableOpacity onPress={toggleDescription} style={styles.button}>
+            <Text style={styles.buttonText}>Description</Text>
+          </TouchableOpacity>
+          {expandedDescription && (
+            <Text style={styles.detailsText}>{exercise.description}</Text>
+          )}
+
+          <TouchableOpacity onPress={toggleReplacement}>
+            <Text style={[styles.buttonText, {}]}>Replacement</Text>
+          </TouchableOpacity>
+          {expandedReplacement && (
+            <Text style={styles.detailsText}>{exercise.replacement}</Text>
+          )}
         </View>
       </ScrollView>
     </View>
@@ -53,42 +88,27 @@ const WorkoutDetails = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#222831",
+    backgroundColor: "#1D1A2F",
   },
   header: {
-    flexDirection: "row", // Arrange children horizontally
+    flexDirection: "row",
     backgroundColor: "white",
     height: 350,
     paddingLeft: 20,
     zIndex: -2,
   },
-  title: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "black",
-    alignSelf: "center", // Center align vertically
-    textAlign: "center",
-    marginBottom: 5,
-  },
-  title2: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 5,
-    alignSelf: "flex-start",
-  },
   image: {
     height: 300,
     width: "75%",
     position: "absolute",
-    zIndex: -1, // Ensure the image is behind other content
+    zIndex: -1,
     alignSelf: "center",
   },
   imageContainer: {},
   exerciseDetailsContainer: {
     flex: 1,
-    paddingTop: "15%",
-    zIndex: -5, // Ensure the image is behind other content
+    paddingTop: "5%",
+    zIndex: -5,
     alignItems: "center",
     paddingVertical: 20,
     paddingHorizontal: 10,
@@ -100,7 +120,7 @@ const styles = StyleSheet.create({
   },
   backbutton: {
     color: "black",
-    fontSize: 40,
+    fontSize: 25,
     alignSelf: "flex-start",
     zIndex: 0,
   },
@@ -114,6 +134,13 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 10,
   },
+  buttonText: {
+    color: "#F53769",
+    fontWeight: "bold",
+    fontSize: 16,
+    padding: 10,
+  },
+  circle: {},
 });
 
 export default WorkoutDetails;

@@ -14,6 +14,7 @@ import { StatusBar } from "expo-status-bar";
 import workoutProgram from "../components/workoutPrograms";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
 import { FontAwesome } from "@expo/vector-icons"; // assuming you're using Expo
+import Icon from "react-native-vector-icons/FontAwesome"; // Import FontAwesome icon component
 
 const Home = ({}) => {
   const [completedExercises, setCompletedExercises] = useState({});
@@ -146,11 +147,20 @@ const Home = ({}) => {
           style={{
             position: "absolute",
             bottom: 40,
-            left: "25%", // Center horizontally
+            left: "21.5%", // Center horizontally
             color: "white", // Text color
+            fontWeight: "bold",
           }}
         >
-          ← Swipe between workouts! →
+          <Icon name="arrow-left" size={15} color="white" style={styles.icon} />
+          {"    "}
+          Swipe between workouts!{"    "}
+          <Icon
+            name="arrow-right"
+            size={15}
+            color="white"
+            style={styles.icon}
+          />
         </Text>
       </View>
 
@@ -262,6 +272,9 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     flex: 1,
+  },
+  icon: {
+    marginHorizontal: 10, // Add space between icons
   },
 });
 
