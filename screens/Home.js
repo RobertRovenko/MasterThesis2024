@@ -136,7 +136,7 @@ const Home = ({}) => {
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
-        <Text style={styles.title}>100 Day Fitness</Text>
+        <Text style={styles.title}>30 Day Fitness</Text>
         <Text style={styles.title2}>{"\n"}</Text>
       </View>
 

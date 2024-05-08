@@ -177,44 +177,252 @@ const workoutProgram = [
   {
     day: "Day 3: Legs",
     exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
+      {
+        name: "Leg Extension",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Leg Extension primarily targets the quadriceps. It's performed by extending the legs against resistance while seated, effectively isolating the quadriceps muscles.",
+        replacement:
+          "A suitable alternative to the Leg Extension is the Bulgarian Split Squat. This exercise also targets the quadriceps but involves performing a split squat movement with one leg elevated behind you on a bench or platform.",
+      },
+      {
+        name: "BB Squat",
+        sets: 4,
+        reps: 8,
+        tip: "Heavy Sets",
+        description:
+          "The Barbell Squat is a compound exercise that targets the quadriceps, hamstrings, glutes, and lower back. It's performed by squatting down while holding a barbell across the upper back and then standing back up.",
+        replacement:
+          "An alternative to the Barbell Squat is the Goblet Squat. This exercise also targets the quadriceps, hamstrings, and glutes but involves holding a single dumbbell or kettlebell in front of your chest while squatting.",
+      },
+      {
+        name: "Hack Squat",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Hack Squat targets the quadriceps, hamstrings, and glutes. It's performed by squatting down on a machine with a platform angled behind you and then pushing the platform upwards.",
+        replacement:
+          "A suitable alternative to the Hack Squat is the Front Squat. This exercise also targets the quadriceps, hamstrings, and glutes but involves holding a barbell in front of your shoulders while squatting.",
+      },
+      {
+        name: "Walking Lunges",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Walking Lunges target the quadriceps, hamstrings, glutes, and calves. They're performed by taking a step forward with one leg, lowering the body until both knees are bent at 90-degree angles, and then stepping forward with the other leg.",
+        replacement:
+          "An alternative to Walking Lunges is the Reverse Lunge. This exercise also targets the quadriceps, hamstrings, glutes, and calves but involves stepping backward into a lunge instead of forward.",
+      },
+      {
+        name: "Seated Calf Raise",
+        sets: 4,
+        reps: 15,
+        tip: "Light Sets",
+        description:
+          "The Seated Calf Raise primarily targets the calf muscles. It's performed by sitting on a calf raise machine, placing the balls of the feet on the platform, and then lifting the heels as high as possible.",
+        replacement:
+          "A suitable alternative to the Seated Calf Raise is the Standing Calf Raise. This exercise also targets the calf muscles but involves standing upright and lifting the heels while holding onto a stable support for balance.",
+      },
     ],
   },
+
   {
     day: "Day 4: Chest & Back",
     exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 8 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
+      {
+        name: "Incline BB Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Incline Barbell Bench Press targets the upper chest, shoulders, and triceps. It's performed by lying on an incline bench with a barbell and pressing the weight upwards until the arms are fully extended.",
+        replacement:
+          "A suitable alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and muscle activation.",
+      },
+      {
+        name: "Flat DB Bench",
+        sets: 3,
+        reps: 8,
+        tip: "Heavy Sets",
+        description:
+          "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
+        replacement:
+          "An alternative to the Flat Dumbbell Bench Press is the Barbell Bench Press. This exercise also targets the chest, shoulders, and triceps but involves using a barbell instead of dumbbells.",
+      },
+      {
+        name: "Cable Flys (low to high)",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Cable Flys (low to high) target the chest muscles. They're performed by standing in front of a cable machine with the pulleys set at the lowest position, and then bringing the handles up and together in a wide arc motion.",
+        replacement:
+          "A suitable alternative to Cable Flys (low to high) is the Pec Deck machine. This exercise also targets the chest muscles but involves sitting in a machine and bringing the handles together in front of the chest.",
+      },
+      {
+        name: "Straight Arm Pulldown",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
+        replacement:
+          "An alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves bending the elbows and pulling the bar down to the chest instead of keeping the arms straight.",
+      },
+      {
+        name: "BB Row",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
+        replacement:
+          "A suitable alternative to the Barbell Row is the T-Bar Row. This exercise also targets the middle back, lats, and biceps but involves using a T-bar machine or landmine attachment instead of a barbell.",
+      },
+      {
+        name: "Low Row",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Low Row targets the middle back, lats, and biceps. It's performed by sitting at a low row machine, grabbing the handles, and pulling them towards the lower abdomen while keeping the back straight.",
+        replacement:
+          "An alternative to the Low Row is the Seated Cable Row. This exercise also targets the middle back, lats, and biceps but involves sitting on a bench and pulling a cable handle towards the midsection.",
+      },
     ],
   },
   {
     day: "Day 5: Delts & Arms",
     exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
+      {
+        name: "BB Shoulder Press",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing a barbell overhead while standing or seated, engaging the deltoid muscles.",
+        replacement:
+          "An alternative to the Barbell Shoulder Press is the Dumbbell Shoulder Press. This exercise also targets the shoulders but involves using dumbbells instead of a barbell, allowing for greater range of motion and unilateral training.",
+      },
+      {
+        name: "Upright Rows",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Upright Rows target the shoulders and upper traps. They're performed by holding a barbell with an overhand grip and pulling it up towards the chin, keeping the elbows higher than the wrists.",
+        replacement:
+          "A suitable alternative to Upright Rows is the Lateral Raise. This exercise also targets the shoulders but involves raising dumbbells to the sides until they reach shoulder height, maintaining a slight bend in the elbows throughout.",
+      },
+      {
+        name: "Rear Delt Fly (DB)",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Rear Delt Fly with Dumbbells targets the rear deltoids and upper back. It's performed by bending at the hips, keeping the back flat, and raising dumbbells to the sides until they reach shoulder height.",
+        replacement:
+          "An alternative to the Rear Delt Fly with Dumbbells is the Face Pull. This exercise also targets the rear deltoids and upper back but involves pulling a rope attachment towards the face while keeping the elbows high and wide.",
+      },
+      {
+        name: "BB Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Curl targets the biceps. It's performed by holding a barbell with an underhand grip and curling it upwards towards the shoulders while keeping the elbows close to the body.",
+        replacement:
+          "An alternative to the Barbell Curl is the Alternating Dumbbell Curl. This exercise also targets the biceps but involves curling dumbbells alternately towards the shoulders while keeping the elbows close to the body.",
+      },
+      {
+        name: "Close Grip Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "Close Grip Bench Press targets the triceps. It's performed by gripping the barbell with hands closer than shoulder-width apart and lowering it to the lower chest before pressing it back up.",
+        replacement:
+          "A suitable alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves lowering the body by bending the elbows and then pressing back up.",
+      },
+      {
+        name: "Incline DB Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Incline Dumbbell Curl targets the biceps. It's performed by lying on an incline bench and curling dumbbells upwards towards the shoulders while keeping the elbows stationary.",
+        replacement:
+          "An alternative to the Incline Dumbbell Curl is the Preacher Curl. This exercise also targets the biceps but involves using a preacher bench and curling a barbell or dumbbells with full range of motion.",
+      },
+      {
+        name: "Straight Bar Extension",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Straight Bar Extension targets the triceps. It's performed by holding a straight bar overhead with arms fully extended and then bending the elbows to lower the bar behind the head before extending them back to the starting position.",
+        replacement:
+          "A suitable alternative to the Straight Bar Extension is the Overhead Tricep Extension with Dumbbell. This exercise also targets the triceps but involves holding a dumbbell with both hands and extending it overhead while keeping the elbows close to the head.",
+      },
     ],
   },
   {
     day: "Day 6: Legs",
     exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
+      {
+        name: "Deadlift",
+        sets: 4,
+        reps: 8,
+        tip: "Heavy Sets",
+        description:
+          "The Deadlift is a compound exercise that targets multiple muscle groups including the hamstrings, glutes, lower back, and traps. It's performed by lifting a barbell from the floor to a standing position, keeping the back straight and knees slightly bent.",
+        replacement:
+          "A suitable alternative to the Deadlift is the Romanian Deadlift. This exercise also targets the hamstrings and lower back but involves keeping the legs straight with a slight bend in the knees and focusing on hip hinge movement.",
+      },
+      {
+        name: "Leg Curl",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Leg Curl targets the hamstrings. It's performed by lying face down on a leg curl machine and curling the legs towards the buttocks against resistance.",
+        replacement:
+          "An alternative to the Leg Curl is the Swiss Ball Hamstring Curl. This exercise also targets the hamstrings but involves lying on your back with your feet on a Swiss ball and curling the ball towards your buttocks.",
+      },
+      {
+        name: "DB RDL",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Dumbbell Romanian Deadlift targets the hamstrings and lower back. It's performed by holding dumbbells in front of the thighs, bending at the hips while keeping the back straight, and lowering the dumbbells towards the floor.",
+        replacement:
+          "A suitable alternative to the Dumbbell Romanian Deadlift is the Barbell Hip Thrust. This exercise also targets the hamstrings and glutes but involves sitting on the floor with a barbell across the hips and thrusting the hips upwards.",
+      },
+      {
+        name: "Leg Press",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Leg Press targets the quadriceps, hamstrings, and glutes. It's performed by pushing a weighted platform away from the body using the legs while seated on a leg press machine.",
+        replacement:
+          "An alternative to the Leg Press is the Bulgarian Split Squat. This exercise also targets the quadriceps, hamstrings, and glutes but involves performing a split squat movement with one leg elevated behind you on a bench or platform.",
+      },
+      {
+        name: "Standing Calf Raise",
+        sets: 4,
+        reps: 15,
+        tip: "Light Sets",
+        description:
+          "The Standing Calf Raise primarily targets the calf muscles. It's performed by standing on a raised platform with the heels hanging off the edge and then lifting the heels as high as possible.",
+        replacement:
+          "A suitable alternative to the Standing Calf Raise is the Seated Calf Raise. This exercise also targets the calf muscles but involves sitting on a calf raise machine and lifting the weight with the balls of the feet.",
+      },
     ],
   },
   {
@@ -224,60 +432,352 @@ const workoutProgram = [
   {
     day: "Day 8: Push",
     exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
+      {
+        name: "Pec Deck",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Pec Deck machine targets the chest muscles. It's performed by sitting in the machine and bringing the handles together in front of the chest in a controlled motion.",
+        replacement:
+          "An effective alternative to the Pec Deck machine is the Cable Crossover. This exercise also targets the chest muscles but involves standing in front of cable pulleys and crossing the hands over the body in a fly motion.",
+      },
+      {
+        name: "Flat BB Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Flat Barbell Bench Press is a compound exercise targeting the chest, shoulders, and triceps. It's performed by lying on a flat bench with a barbell and pressing it upwards until the arms are fully extended.",
+        replacement:
+          "An alternative to the Flat Barbell Bench Press is the Dumbbell Bench Press. This exercise also targets the chest, shoulders, and triceps but involves using dumbbells instead of a barbell, allowing for greater range of motion and muscle activation.",
+      },
+      {
+        name: "Flat DB Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
+        replacement:
+          "A suitable alternative to the Flat Dumbbell Bench Press is the Barbell Bench Press. This exercise also targets the chest, shoulders, and triceps but involves using a barbell instead of dumbbells.",
+      },
+      {
+        name: "Lateral Raises",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Lateral Raises target the lateral deltoids and are performed by raising the arms to the sides until they are parallel to the ground. This exercise helps in strengthening and defining the shoulders.",
+        replacement:
+          "The Cable Lateral Raises is a great alternative to the normal Lateral Raises. The primary difference is the constant tension provided by the cable throughout the movement, which can enhance muscle activation and growth.",
+      },
+      {
+        name: "DB Shoulder Press",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Dumbbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing dumbbells overhead while seated or standing, engaging the deltoid muscles.",
+        replacement:
+          "An effective alternative to the DB Shoulder Press is the Barbell Shoulder Press, also known as the Overhead Press. This exercise utilizes a barbell instead of dumbbells and allows for heavier weights to be lifted, thus promoting strength and muscle growth in the shoulders.",
+      },
+      {
+        name: "Rope Extension",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Rope Extension, also known as Triceps Pushdown with Rope, targets the triceps muscles. It's performed by grasping a rope attachment with palms facing down, then pushing the rope downwards while keeping the upper arms stationary.",
+        replacement:
+          "A suitable alternative to Rope Extension is the Close Grip Bench Press. This compound exercise not only targets the triceps but also engages the chest and shoulders. It involves using a barbell with a narrow grip, lowering it to the chest and pressing it back up.",
+      },
+      {
+        name: "BB Skullcrusher",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Skullcrusher, also known as lying triceps extension, is an isolation exercise targeting the triceps. It's performed by lying on a bench and lowering the barbell towards the forehead, then extending the arms to raise the barbell back to the starting position.",
+        replacement:
+          "An alternative to the Barbell Skullcrusher is the Dumbbell Skullcrusher. This exercise provides similar benefits while allowing for greater unilateral development of the triceps. It's performed using dumbbells instead of a barbell, which can offer better range of motion and stabilization.",
+      },
     ],
   },
   {
     day: "Day 9: Pull",
     exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
+      {
+        name: "BB Row",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
+        replacement:
+          "A suitable alternative to the Barbell Row is the T-Bar Row. This exercise also targets the middle back, lats, and biceps but involves using a T-bar machine or landmine attachment instead of a barbell.",
+      },
+      {
+        name: "Straight Arm Pulldown",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
+        replacement:
+          "An alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves bending the elbows and pulling the bar down to the chest instead of keeping the arms straight.",
+      },
+      {
+        name: "Wide Grip Pulldown",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Wide Grip Pulldown primarily targets the lats. It's performed by sitting at a pulldown machine with a wide grip on the bar and pulling it down towards the chest, then returning to the starting position.",
+        replacement:
+          "An effective alternative to the Wide Grip Pulldown is the Pull-Up. This bodyweight exercise also targets the lats but involves pulling the body up to a bar instead of pulling a bar down.",
+      },
+      {
+        name: "Seated Cable Row (close)",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Seated Cable Row targets the middle back, lats, and biceps. It's performed by sitting at a cable row machine with a close grip on the handles and pulling them towards the abdomen, then returning to the starting position.",
+        replacement:
+          "An alternative to the Seated Cable Row is the Bent-Over Barbell Row. This exercise also targets the middle back, lats, and biceps but involves bending at the hips with a barbell in hand and pulling it towards the lower abdomen.",
+      },
+      {
+        name: "Cable Rear Delt Fly",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Cable Rear Delt Fly targets the rear deltoids and upper back. It's performed by pulling the cables out to the sides while keeping the arms straight and squeezing the shoulder blades together, then returning to the starting position.",
+        replacement:
+          "An effective alternative to the Cable Rear Delt Fly is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
+      },
+      {
+        name: "Cable BB Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Cable Barbell Curl targets the biceps. It's performed by attaching a straight bar to a low pulley cable, grasping the bar with an underhand grip, and curling it towards the shoulders while keeping the elbows stationary.",
+        replacement:
+          "An alternative to the Cable Barbell Curl is the Standing Barbell Curl. This exercise also targets the biceps but involves using a free-weight barbell instead of a cable machine.",
+      },
+      {
+        name: "Cable Hammer Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Cable Hammer Curl targets the brachialis and brachioradialis muscles of the forearm, along with the biceps. It's performed by grasping cable attachments with a neutral grip and curling them towards the shoulders while keeping the elbows stationary.",
+        replacement:
+          "An effective alternative to the Cable Hammer Curl is the Dumbbell Hammer Curl. This exercise also targets the brachialis, brachioradialis, and biceps but involves using dumbbells instead of a cable machine, allowing for greater range of motion and muscle activation.",
+      },
     ],
   },
+
   {
     day: "Day 10: Legs",
     exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
+      {
+        name: "Leg Extension",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Leg Extension primarily targets the quadriceps. It's performed by extending the legs against resistance while seated, effectively isolating the quadriceps muscles.",
+        replacement:
+          "A suitable alternative to the Leg Extension is the Bulgarian Split Squat. This exercise also targets the quadriceps but involves performing a split squat movement with one leg elevated behind you on a bench or platform.",
+      },
+      {
+        name: "BB Squat",
+        sets: 4,
+        reps: 8,
+        tip: "Heavy Sets",
+        description:
+          "The Barbell Squat is a compound exercise targeting the quadriceps, hamstrings, glutes, and lower back. It's performed by squatting down while holding a barbell on the shoulders, then standing back up.",
+        replacement:
+          "An alternative to the Barbell Squat is the Goblet Squat. This exercise also targets the quadriceps, hamstrings, glutes, and lower back but involves holding a single dumbbell or kettlebell in front of the chest while squatting.",
+      },
+      {
+        name: "Hack Squat",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Hack Squat machine targets the quadriceps, hamstrings, and glutes. It's performed by standing on a platform and pushing a weighted sled upwards at a 45-degree angle.",
+        replacement:
+          "An effective alternative to the Hack Squat machine is the Dumbbell Step-Up. This exercise also targets the quadriceps, hamstrings, and glutes but involves stepping onto a platform with dumbbells in hand.",
+      },
+      {
+        name: "Walking Lunges",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Walking Lunges target the quadriceps, hamstrings, glutes, and calves. They're performed by taking a large step forward, lowering the body until the rear knee nearly touches the ground, then pushing back up and stepping forward with the opposite leg.",
+        replacement:
+          "A suitable alternative to Walking Lunges is the Reverse Lunge. This exercise also targets the quadriceps, hamstrings, glutes, and calves but involves stepping backward instead of forward.",
+      },
+      {
+        name: "Seated Calf Raise",
+        sets: 4,
+        reps: 15,
+        tip: "Light Sets",
+        description:
+          "The Seated Calf Raise targets the calf muscles. It's performed by sitting at a calf raise machine with the knees bent and lifting the weight by extending the ankles, then lowering the weight back down.",
+        replacement:
+          "An alternative to the Seated Calf Raise is the Standing Calf Raise. This exercise also targets the calf muscles but involves standing instead of sitting and lifting the body by extending the ankles while holding onto a bar or railing for support.",
+      },
     ],
   },
+
   {
     day: "Day 11: Chest & Back",
     exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
+      {
+        name: "Incline BB Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Incline Barbell Bench Press targets the upper chest, shoulders, and triceps. It's performed by lying on an incline bench with a barbell and pressing the weight upwards until the arms are fully extended.",
+        replacement:
+          "A suitable alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and muscle activation.",
+      },
+      {
+        name: "Flat DB Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
+        replacement:
+          "A suitable alternative to the Flat Dumbbell Bench Press is the Barbell Bench Press. This exercise also targets the chest, shoulders, and triceps but involves using a barbell instead of dumbbells.",
+      },
+      {
+        name: "Cable Flys (low to high)",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Cable Flys (low to high) target the chest muscles. They're performed by standing between two high pulleys with cables attached, then bringing the hands together in a fly motion from a low position to a high position in front of the body.",
+        replacement:
+          "An alternative to Cable Flys (low to high) is the Dumbbell Fly. This exercise also targets the chest muscles but involves lying on a flat bench with dumbbells and bringing them together in a fly motion.",
+      },
+      {
+        name: "Straight Arm Pulldown",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
+        replacement:
+          "An alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves bending the elbows and pulling the bar down to the chest instead of keeping the arms straight.",
+      },
+      {
+        name: "BB Row",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
+        replacement:
+          "A suitable alternative to the Barbell Row is the T-Bar Row. This exercise also targets the middle back, lats, and biceps but involves using a T-bar machine or landmine attachment instead of a barbell.",
+      },
+      {
+        name: "Low Row",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Low Row targets the middle back, lats, and biceps. It's performed by sitting at a cable row machine with a low pulley, grasping the handles, and pulling them towards the abdomen, then returning to the starting position.",
+        replacement:
+          "An alternative to the Low Row is the Seated Cable Row. This exercise also targets the middle back, lats, and biceps but involves sitting upright with a close grip on the handles and pulling them towards the lower abdomen.",
+      },
     ],
   },
+
   {
     day: "Day 12: Delts & Arms",
     exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
+      {
+        name: "BB Shoulder Press",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing a barbell overhead while seated or standing, engaging the deltoid muscles.",
+        replacement:
+          "An effective alternative to the Barbell Shoulder Press is the Dumbbell Shoulder Press. This exercise also targets the shoulders but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
+      },
+      {
+        name: "Upright Rows",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Upright Rows primarily target the shoulders and upper traps. They're performed by holding a barbell with an overhand grip and lifting it upwards towards the chin, keeping the elbows higher than the forearms.",
+        replacement:
+          "An alternative to Upright Rows is the Lateral Raise. This exercise also targets the shoulders but involves lifting dumbbells or cables out to the sides instead of pulling a barbell upwards.",
+      },
+      {
+        name: "Rear Delt Fly (DB)",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "The Rear Delt Fly with Dumbbells targets the rear deltoids and upper back. It's performed by bending forward at the hips with dumbbells in hand and lifting them out to the sides, squeezing the shoulder blades together.",
+        replacement:
+          "An effective alternative to the Rear Delt Fly with Dumbbells is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
+      },
+      {
+        name: "BB Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Barbell Curl primarily targets the biceps. It's performed by holding a barbell with an underhand grip and curling it towards the shoulders while keeping the elbows stationary.",
+        replacement:
+          "An alternative to the Barbell Curl is the Dumbbell Curl. This exercise also targets the biceps but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
+      },
+      {
+        name: "Close Grip Bench",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "Close Grip Bench Press primarily targets the triceps. It's performed by gripping the barbell with hands closer than shoulder-width apart and lowering it to the chest before pushing it back up.",
+        replacement:
+          "An effective alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves dipping down and pushing back up using a dip bar or parallel bars.",
+      },
+      {
+        name: "Incline DB Curl",
+        sets: 3,
+        reps: 10,
+        tip: "Medium Sets",
+        description:
+          "The Incline Dumbbell Curl targets the biceps. It's performed by lying on an incline bench and curling dumbbells upwards while keeping the elbows stationary.",
+        replacement:
+          "An alternative to the Incline Dumbbell Curl is the Preacher Curl. This exercise also targets the biceps but involves sitting at a preacher curl bench with arms resting on the pad and curling a barbell or dumbbells.",
+      },
+      {
+        name: "Straight Bar Extension",
+        sets: 3,
+        reps: 12,
+        tip: "Light Sets",
+        description:
+          "Straight Bar Extension targets the triceps. It's performed by holding a straight bar with an overhand grip and lowering it behind the head, then extending the arms to raise the bar back up.",
+        replacement:
+          "An alternative to the Straight Bar Extension is the Rope Tricep Pushdown. This exercise also targets the triceps but involves using a rope attachment on a cable machine, allowing for a different grip and range of motion.",
+      },
     ],
   },
+
   {
     day: "Day 13: Legs",
     exercises: [
@@ -499,673 +999,6 @@ const workoutProgram = [
       { name: "DB RDL", sets: 3, reps: 10 },
       { name: "Leg Press", sets: 3, reps: 10 },
       { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 35: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 36: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 37: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 38: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 39: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 40: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 41: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 42: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 43: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 44: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 45: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 46: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 47: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 48: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 49: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 50: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 51: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 52: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 53: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 54: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 55: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 56: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 57: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 58: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 59: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 60: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 61: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 62: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 63: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 64: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 65: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 66: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 67: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 68: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 69: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 70: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 71: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 72: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 73: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 74: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 75: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 76: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 77: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 78: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 79: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 80: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 81: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 82: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 83: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 84: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 85: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 86: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 87: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 88: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 89: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 90: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 91: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 92: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 93: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 94: Legs",
-    exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 95: Chest & Back",
-    exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 96: Delts & Arms",
-    exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
-    ],
-  },
-  {
-    day: "Day 97: Legs",
-    exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
-    ],
-  },
-  {
-    day: "Day 98: Rest",
-    exercises: [],
-  },
-  {
-    day: "Day 99: Push",
-    exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
-    ],
-  },
-  {
-    day: "Day 100: Pull",
-    exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
     ],
   },
 ];

@@ -61,12 +61,12 @@ const LandingPage = ({ navigation }) => {
       source={require("../img/landingimage2.jpg")}
     >
       <View style={styles.container}>
-        <Text style={styles.textLogo}>100 Day{"\n"}Fitness</Text>
+        <Text style={styles.textLogo}>30 Day{"\n"}Fitness</Text>
 
         <Text style={styles.title}></Text>
         <Text style={styles.description}>
           The best workout program and tips to completely transform your body in
-          100 days
+          30 days
         </Text>
 
         <View style={{ flex: 1 }} />
@@ -97,7 +97,7 @@ const LandingPage = ({ navigation }) => {
                 style={styles.slider}
                 source={require("../icons/sliderr.png")}
               />
-              <Text style={styles.modalTitle}>Welcome to 100 Day Fitness</Text>
+              <Text style={styles.modalTitle}>Welcome to 30 Day Fitness</Text>
               <Text style={styles.modalText}>
                 Congratulations on taking the first step towards your
                 transformation! {"\n"}
@@ -107,7 +107,7 @@ const LandingPage = ({ navigation }) => {
                 expert supplement tips, all aimed at helping you achieve a
                 sculpted physique. {"\n"}
                 {"\n"}Get ready to transform your body and unlock your full
-                potential, in 100 days!
+                potential, in 30 days!
               </Text>
             </View>
           </Animated.View>
