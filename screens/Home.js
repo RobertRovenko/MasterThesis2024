@@ -15,6 +15,10 @@ import workoutProgram from "../components/workoutPrograms";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
 import { FontAwesome } from "@expo/vector-icons"; // assuming you're using Expo
 import Icon from "react-native-vector-icons/FontAwesome"; // Import FontAwesome icon component
+import {
+  saveCompletedExercises,
+  loadCompletedExercises,
+} from "../components/workoutStorage";
 
 const Home = ({}) => {
   const [completedExercises, setCompletedExercises] = useState({});
@@ -23,6 +27,46 @@ const Home = ({}) => {
   const totalPages = workoutProgram.length;
   const screenHeight = Dimensions.get("window").height;
   const navigation = useNavigation(); // Initialize useNavigation hook
+
+  useEffect(() => {
+    const loadInitialData = async () => {
+      const initialCompletedExercises = await loadCompletedExercises();
+      setCompletedExercises(initialCompletedExercises);
+    };
+    loadInitialData();
+  }, []);
+
+  useEffect(() => {
+    const initializeCompletedExercises = () => {
+      const initialCompletedExercises = {};
+      workoutProgram.forEach((day, index) => {
+        initialCompletedExercises[index] = [];
+      });
+      setCompletedExercises(initialCompletedExercises);
+    };
+    initializeCompletedExercises();
+  }, []);
+  const markExerciseComplete = (dayIndex, exerciseName) => {
+    setCompletedExercises((prevCompletedExercises) => {
+      const updatedCompletedExercises = { ...prevCompletedExercises };
+      if (!updatedCompletedExercises[dayIndex]) {
+        updatedCompletedExercises[dayIndex] = [];
+      }
+
+      const updatedWorkoutProgram = [...workoutProgram];
+      updatedWorkoutProgram[dayIndex].exercises = updatedWorkoutProgram[
+        dayIndex
+      ].exercises.map((exercise) => {
+        if (exercise.name === exerciseName) {
+          return { ...exercise, completed: !exercise.completed };
+        }
+        return exercise;
+      });
+
+      // No need to update workoutProgram state here
+      return updatedCompletedExercises;
+    });
+  };
 
   const panResponder = useRef(
     PanResponder.create({
@@ -48,34 +92,13 @@ const Home = ({}) => {
 
   const maxHeight = screenHeight * 0.65;
 
-  const markExerciseComplete = (dayIndex, exerciseName) => {
-    setCompletedExercises((prevCompletedExercises) => {
-      const updatedCompletedExercises = { ...prevCompletedExercises };
-      if (!updatedCompletedExercises[dayIndex]) {
-        updatedCompletedExercises[dayIndex] = [];
-      }
-
-      // Check if the exercise is already marked as complete
-      const index = updatedCompletedExercises[dayIndex].indexOf(exerciseName);
-      if (index !== -1) {
-        // Exercise is already marked as complete, remove it
-        updatedCompletedExercises[dayIndex].splice(index, 1);
-      } else {
-        // Exercise is not marked as complete, mark it as complete
-        updatedCompletedExercises[dayIndex].push(exerciseName);
-      }
-
-      return updatedCompletedExercises;
-    });
-  };
-
   const renderWorkoutCard = () => {
     const workout = workoutProgram[currentPage];
     return (
       <View>
         <Text style={styles.text}>{workout.day}</Text>
         <ScrollView
-          style={[styles.scrollView, { maxHeight }]} // Set maximum height to 400 (adjust as needed)
+          style={[styles.scrollView, { maxHeight }]}
           showsVerticalScrollIndicator={false}
         >
           {workout.exercises.map((exercise, index) => (
@@ -101,21 +124,13 @@ const Home = ({}) => {
                       >
                         <View style={{ padding: 10 }}>
                           {/* Adjust padding to increase touch area */}
-                          {completedExercises[currentPage]?.includes(
-                            exercise.name
-                          ) ? (
-                            <FontAwesome
-                              name="check-square"
-                              size={30}
-                              color="white"
-                            /> // Checked checkbox icon
-                          ) : (
-                            <FontAwesome
-                              name="square"
-                              size={30}
-                              color="white"
-                            /> // Empty checkbox icon
-                          )}
+                          <FontAwesome
+                            name={
+                              exercise.completed ? "check-square" : "square"
+                            }
+                            size={30}
+                            color="white"
+                          />
                         </View>
                       </TouchableOpacity>
                     </View>

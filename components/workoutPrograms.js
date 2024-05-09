@@ -8,17 +8,18 @@ const workoutProgram = [
         name: "Incline Dumbell Bench",
         sets: 4,
         reps: "6-8",
+        completed: false,
         tip: "Heavy Sets",
         description:
           "Incline Dumbbell Bench targets the upper chest, an area often lacking in development. This free weight exercise enhances chest aesthetics and strength by isolating the upper pectoral muscles. It also engages stabilizing muscles for improved shoulder and arm strength. Ideal for addressing muscle imbalances, it offers a greater range of motion compared to other chest exercises",
         replacement:
           "The normal Incline Bench Press is a great alternative to the dumbell variant. The only difference is some balance and the posibility to isolate each arm",
-        isDone: false,
       },
       {
         name: "Incline Smith Machine Bench",
         sets: 4,
         reps: "10-12",
+        completed: false,
         tip: "Medium-Light Sets",
         description:
           "The Incline Smith Machine Bench involves using medium to light weight and focusing on going to failure. This exercise is excellent for isolating the upper pecs and achieving a pump, enhancing muscle engagement during subsequent exercises.",
@@ -30,6 +31,7 @@ const workoutProgram = [
         name: "Machine Chest Press",
         sets: 3,
         reps: "8-10",
+        completed: false,
         tip: "Medium Sets",
         description:
           "The Machine Chest Press is a resistance exercise that targets the chest muscles using a machine. It's performed by pushing the handles forward until the arms are fully extended and then returning to the starting position.",
