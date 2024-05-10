@@ -44,6 +44,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Chest Fly Machine involves sitting in the machine and pushing the handles together in a controlled motion, mimicking a fly movement. This exercise effectively isolates the chest muscles.",
         replacement:
@@ -54,6 +56,8 @@ const workoutProgram = [
         sets: 4,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Lateral Raises target the lateral deltoids and are performed by raising the arms to the sides until they are parallel to the ground. This exercise helps in strengthening and defining the shoulders.",
         replacement:
@@ -65,6 +69,8 @@ const workoutProgram = [
         sets: 3,
         reps: 8,
         tip: "Medium-Heavy Sets",
+        completed: false,
+
         description:
           "The Dumbbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing dumbbells overhead while seated or standing, engaging the deltoid muscles.",
         replacement:
@@ -75,6 +81,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "Rope Extension, also known as Triceps Pushdown with Rope, targets the triceps muscles. It's performed by grasping a rope attachment with palms facing down, then pushing the rope downwards while keeping the upper arms stationary.",
         replacement:
@@ -84,6 +92,7 @@ const workoutProgram = [
         name: "Barebell Skullcrusher",
         sets: 3,
         reps: 8,
+        completed: false,
         description:
           "The Barbell Skullcrusher, also known as lying triceps extension, is an isolation exercise targeting the triceps. It's performed by lying on a bench and lowering the barbell towards the forehead, then extending the arms to raise the barbell back to the starting position.",
         replacement:
@@ -99,6 +108,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
         replacement:
@@ -109,6 +120,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Wide Grip Pulldown primarily targets the upper back and lats. It's performed by pulling a wide grip bar down to the chest while keeping the torso upright and elbows pointed outwards.",
         replacement:
@@ -119,6 +132,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Close Grip Pulldown targets the middle back and biceps. It's performed by pulling a close grip bar down to the upper chest while keeping the elbows close to the body.",
         replacement:
@@ -129,6 +144,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
         replacement:
@@ -139,6 +156,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Seated Cable Row (one arm) targets the middle back, lats, and biceps. It's performed by sitting upright, pulling a cable handle towards the midsection with one arm at a time, and then returning to the starting position.",
         replacement:
@@ -149,6 +168,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Rear Delt Fly primarily targets the rear deltoids and upper back. It's performed by sitting on a bench with a slight forward lean, holding dumbbells, and raising the arms to the sides until they reach shoulder level.",
         replacement:
@@ -159,6 +180,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Cable Barbell Curl targets the biceps. It's performed by attaching a straight bar to a low cable pulley, grabbing the bar with an underhand grip, and curling the bar towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -169,6 +192,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Cable Hammer Curl targets the brachialis and brachioradialis muscles of the forearm, as well as the biceps. It's performed by holding cable attachments with a neutral grip and curling them towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -184,6 +209,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Leg Extension primarily targets the quadriceps. It's performed by extending the legs against resistance while seated, effectively isolating the quadriceps muscles.",
         replacement:
@@ -194,6 +221,8 @@ const workoutProgram = [
         sets: 4,
         reps: 8,
         tip: "Heavy Sets",
+        completed: false,
+
         description:
           "The Barbell Squat is a compound exercise that targets the quadriceps, hamstrings, glutes, and lower back. It's performed by squatting down while holding a barbell across the upper back and then standing back up.",
         replacement:
@@ -204,6 +233,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Hack Squat targets the quadriceps, hamstrings, and glutes. It's performed by squatting down on a machine with a platform angled behind you and then pushing the platform upwards.",
         replacement:
@@ -214,6 +245,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Walking Lunges target the quadriceps, hamstrings, glutes, and calves. They're performed by taking a step forward with one leg, lowering the body until both knees are bent at 90-degree angles, and then stepping forward with the other leg.",
         replacement:
@@ -224,6 +257,8 @@ const workoutProgram = [
         sets: 4,
         reps: 15,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Seated Calf Raise primarily targets the calf muscles. It's performed by sitting on a calf raise machine, placing the balls of the feet on the platform, and then lifting the heels as high as possible.",
         replacement:
@@ -240,6 +275,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Incline Barbell Bench Press targets the upper chest, shoulders, and triceps. It's performed by lying on an incline bench with a barbell and pressing the weight upwards until the arms are fully extended.",
         replacement:
@@ -250,6 +287,8 @@ const workoutProgram = [
         sets: 3,
         reps: 8,
         tip: "Heavy Sets",
+        completed: false,
+
         description:
           "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
         replacement:
@@ -260,6 +299,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Cable Flys (low to high) target the chest muscles. They're performed by standing in front of a cable machine with the pulleys set at the lowest position, and then bringing the handles up and together in a wide arc motion.",
         replacement:
@@ -270,6 +311,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
         replacement:
@@ -280,6 +323,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
         replacement:
@@ -290,6 +335,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Low Row targets the middle back, lats, and biceps. It's performed by sitting at a low row machine, grabbing the handles, and pulling them towards the lower abdomen while keeping the back straight.",
         replacement:
@@ -305,6 +352,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing a barbell overhead while standing or seated, engaging the deltoid muscles.",
         replacement:
@@ -315,6 +364,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Upright Rows target the shoulders and upper traps. They're performed by holding a barbell with an overhand grip and pulling it up towards the chin, keeping the elbows higher than the wrists.",
         replacement:
@@ -325,6 +376,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Rear Delt Fly with Dumbbells targets the rear deltoids and upper back. It's performed by bending at the hips, keeping the back flat, and raising dumbbells to the sides until they reach shoulder height.",
         replacement:
@@ -335,6 +388,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Curl targets the biceps. It's performed by holding a barbell with an underhand grip and curling it upwards towards the shoulders while keeping the elbows close to the body.",
         replacement:
@@ -345,6 +400,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "Close Grip Bench Press targets the triceps. It's performed by gripping the barbell with hands closer than shoulder-width apart and lowering it to the lower chest before pressing it back up.",
         replacement:
@@ -355,6 +412,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Incline Dumbbell Curl targets the biceps. It's performed by lying on an incline bench and curling dumbbells upwards towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -365,6 +424,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Straight Bar Extension targets the triceps. It's performed by holding a straight bar overhead with arms fully extended and then bending the elbows to lower the bar behind the head before extending them back to the starting position.",
         replacement:
@@ -380,6 +441,8 @@ const workoutProgram = [
         sets: 4,
         reps: 8,
         tip: "Heavy Sets",
+        completed: false,
+
         description:
           "The Deadlift is a compound exercise that targets multiple muscle groups including the hamstrings, glutes, lower back, and traps. It's performed by lifting a barbell from the floor to a standing position, keeping the back straight and knees slightly bent.",
         replacement:
@@ -390,6 +453,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Leg Curl targets the hamstrings. It's performed by lying face down on a leg curl machine and curling the legs towards the buttocks against resistance.",
         replacement:
@@ -400,6 +465,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Dumbbell Romanian Deadlift targets the hamstrings and lower back. It's performed by holding dumbbells in front of the thighs, bending at the hips while keeping the back straight, and lowering the dumbbells towards the floor.",
         replacement:
@@ -410,6 +477,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Leg Press targets the quadriceps, hamstrings, and glutes. It's performed by pushing a weighted platform away from the body using the legs while seated on a leg press machine.",
         replacement:
@@ -420,6 +489,8 @@ const workoutProgram = [
         sets: 4,
         reps: 15,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Standing Calf Raise primarily targets the calf muscles. It's performed by standing on a raised platform with the heels hanging off the edge and then lifting the heels as high as possible.",
         replacement:
@@ -429,7 +500,16 @@ const workoutProgram = [
   },
   {
     day: "Day 7: Rest",
-    exercises: [],
+    exercises: [
+      {
+        name: "Rest Day",
+        sets: null,
+        reps: null,
+        completed: false,
+        description: "",
+        replacement: "",
+      },
+    ],
   },
   {
     day: "Day 8: Push",
@@ -439,6 +519,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Pec Deck machine targets the chest muscles. It's performed by sitting in the machine and bringing the handles together in front of the chest in a controlled motion.",
         replacement:
@@ -449,6 +531,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Flat Barbell Bench Press is a compound exercise targeting the chest, shoulders, and triceps. It's performed by lying on a flat bench with a barbell and pressing it upwards until the arms are fully extended.",
         replacement:
@@ -459,6 +543,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
         replacement:
@@ -469,6 +555,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Lateral Raises target the lateral deltoids and are performed by raising the arms to the sides until they are parallel to the ground. This exercise helps in strengthening and defining the shoulders.",
         replacement:
@@ -479,6 +567,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Dumbbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing dumbbells overhead while seated or standing, engaging the deltoid muscles.",
         replacement:
@@ -489,6 +579,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Rope Extension, also known as Triceps Pushdown with Rope, targets the triceps muscles. It's performed by grasping a rope attachment with palms facing down, then pushing the rope downwards while keeping the upper arms stationary.",
         replacement:
@@ -499,6 +591,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Skullcrusher, also known as lying triceps extension, is an isolation exercise targeting the triceps. It's performed by lying on a bench and lowering the barbell towards the forehead, then extending the arms to raise the barbell back to the starting position.",
         replacement:
@@ -514,6 +608,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
         replacement:
@@ -524,6 +620,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
         replacement:
@@ -534,6 +632,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Wide Grip Pulldown primarily targets the lats. It's performed by sitting at a pulldown machine with a wide grip on the bar and pulling it down towards the chest, then returning to the starting position.",
         replacement:
@@ -544,6 +644,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Seated Cable Row targets the middle back, lats, and biceps. It's performed by sitting at a cable row machine with a close grip on the handles and pulling them towards the abdomen, then returning to the starting position.",
         replacement:
@@ -554,6 +656,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Cable Rear Delt Fly targets the rear deltoids and upper back. It's performed by pulling the cables out to the sides while keeping the arms straight and squeezing the shoulder blades together, then returning to the starting position.",
         replacement:
@@ -564,6 +668,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Cable Barbell Curl targets the biceps. It's performed by attaching a straight bar to a low pulley cable, grasping the bar with an underhand grip, and curling it towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -574,6 +680,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Cable Hammer Curl targets the brachialis and brachioradialis muscles of the forearm, along with the biceps. It's performed by grasping cable attachments with a neutral grip and curling them towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -590,6 +698,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Leg Extension primarily targets the quadriceps. It's performed by extending the legs against resistance while seated, effectively isolating the quadriceps muscles.",
         replacement:
@@ -600,6 +710,8 @@ const workoutProgram = [
         sets: 4,
         reps: 8,
         tip: "Heavy Sets",
+        completed: false,
+
         description:
           "The Barbell Squat is a compound exercise targeting the quadriceps, hamstrings, glutes, and lower back. It's performed by squatting down while holding a barbell on the shoulders, then standing back up.",
         replacement:
@@ -610,6 +722,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Hack Squat machine targets the quadriceps, hamstrings, and glutes. It's performed by standing on a platform and pushing a weighted sled upwards at a 45-degree angle.",
         replacement:
@@ -620,6 +734,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Walking Lunges target the quadriceps, hamstrings, glutes, and calves. They're performed by taking a large step forward, lowering the body until the rear knee nearly touches the ground, then pushing back up and stepping forward with the opposite leg.",
         replacement:
@@ -630,6 +746,8 @@ const workoutProgram = [
         sets: 4,
         reps: 15,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Seated Calf Raise targets the calf muscles. It's performed by sitting at a calf raise machine with the knees bent and lifting the weight by extending the ankles, then lowering the weight back down.",
         replacement:
@@ -646,6 +764,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Incline Barbell Bench Press targets the upper chest, shoulders, and triceps. It's performed by lying on an incline bench with a barbell and pressing the weight upwards until the arms are fully extended.",
         replacement:
@@ -656,6 +776,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Flat Dumbbell Bench Press targets the chest, shoulders, and triceps. It's performed by lying on a flat bench with dumbbells and pressing them upwards until the arms are fully extended.",
         replacement:
@@ -666,6 +788,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Cable Flys (low to high) target the chest muscles. They're performed by standing between two high pulleys with cables attached, then bringing the hands together in a fly motion from a low position to a high position in front of the body.",
         replacement:
@@ -676,6 +800,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
         replacement:
@@ -686,6 +812,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Row targets the middle back, lats, and biceps. It's performed by bending at the hips and knees, keeping the back flat, and pulling a barbell towards the lower abdomen.",
         replacement:
@@ -696,6 +824,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Low Row targets the middle back, lats, and biceps. It's performed by sitting at a cable row machine with a low pulley, grasping the handles, and pulling them towards the abdomen, then returning to the starting position.",
         replacement:
@@ -712,6 +842,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Shoulder Press is a compound exercise targeting the shoulders. It's performed by pressing a barbell overhead while seated or standing, engaging the deltoid muscles.",
         replacement:
@@ -722,6 +854,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Upright Rows primarily target the shoulders and upper traps. They're performed by holding a barbell with an overhand grip and lifting it upwards towards the chin, keeping the elbows higher than the forearms.",
         replacement:
@@ -732,6 +866,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "The Rear Delt Fly with Dumbbells targets the rear deltoids and upper back. It's performed by bending forward at the hips with dumbbells in hand and lifting them out to the sides, squeezing the shoulder blades together.",
         replacement:
@@ -742,6 +878,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Barbell Curl primarily targets the biceps. It's performed by holding a barbell with an underhand grip and curling it towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -752,6 +890,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "Close Grip Bench Press primarily targets the triceps. It's performed by gripping the barbell with hands closer than shoulder-width apart and lowering it to the chest before pushing it back up.",
         replacement:
@@ -762,6 +902,8 @@ const workoutProgram = [
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
+        completed: false,
+
         description:
           "The Incline Dumbbell Curl targets the biceps. It's performed by lying on an incline bench and curling dumbbells upwards while keeping the elbows stationary.",
         replacement:
@@ -772,6 +914,8 @@ const workoutProgram = [
         sets: 3,
         reps: 12,
         tip: "Light Sets",
+        completed: false,
+
         description:
           "Straight Bar Extension targets the triceps. It's performed by holding a straight bar with an overhand grip and lowering it behind the head, then extending the arms to raise the bar back up.",
         replacement:
@@ -783,11 +927,11 @@ const workoutProgram = [
   {
     day: "Day 13: Legs",
     exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
+      { name: "Deadlift", sets: 4, reps: 8, completed: false },
+      { name: "Leg Curl", sets: 3, reps: 12, completed: false },
+      { name: "DB RDL", sets: 3, reps: 10, completed: false },
+      { name: "Leg Press", sets: 3, reps: 10, completed: false },
+      { name: "Standing Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
@@ -797,68 +941,68 @@ const workoutProgram = [
   {
     day: "Day 15: Push",
     exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
+      { name: "Pec Deck", sets: 3, reps: 10, completed: false },
+      { name: "Flat BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Lateral Raises", sets: 3, reps: 12, completed: false },
+      { name: "DB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Rope Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Skullcrusher", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 16: Pull",
     exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 12, completed: false },
+      { name: "Wide Grip Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "Seated Cable Row (close)", sets: 3, reps: 10, completed: false },
+      { name: "Cable Rear Delt Fly", sets: 3, reps: 12, completed: false },
+      { name: "Cable BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Cable Hammer Curl", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 17: Legs",
     exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
+      { name: "Leg Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Squat", sets: 4, reps: 8, completed: false },
+      { name: "Hack Squat", sets: 3, reps: 10, completed: false },
+      { name: "Walking Lunges", sets: 3, reps: 12, completed: false },
+      { name: "Seated Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
     day: "Day 18: Chest & Back",
     exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
+      { name: "Incline BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Cable Flys (low to high)", sets: 3, reps: 12, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Low Row", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 19: Delts & Arms",
     exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
+      { name: "BB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Upright Rows", sets: 3, reps: 12, completed: false },
+      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12, completed: false },
+      { name: "BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Close Grip Bench", sets: 3, reps: 10, completed: false },
+      { name: "Incline DB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Straight Bar Extension", sets: 3, reps: 12, completed: false },
     ],
   },
   {
     day: "Day 20: Legs",
     exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
+      { name: "Deadlift", sets: 4, reps: 8, completed: false },
+      { name: "Leg Curl", sets: 3, reps: 12, completed: false },
+      { name: "DB RDL", sets: 3, reps: 10, completed: false },
+      { name: "Leg Press", sets: 3, reps: 10, completed: false },
+      { name: "Standing Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
@@ -868,68 +1012,68 @@ const workoutProgram = [
   {
     day: "Day 22: Push",
     exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
+      { name: "Pec Deck", sets: 3, reps: 10, completed: false },
+      { name: "Flat BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Lateral Raises", sets: 3, reps: 12, completed: false },
+      { name: "DB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Rope Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Skullcrusher", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 23: Pull",
     exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 12, completed: false },
+      { name: "Wide Grip Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "Seated Cable Row (close)", sets: 3, reps: 10, completed: false },
+      { name: "Cable Rear Delt Fly", sets: 3, reps: 12, completed: false },
+      { name: "Cable BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Cable Hammer Curl", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 24: Legs",
     exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
+      { name: "Leg Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Squat", sets: 4, reps: 8, completed: false },
+      { name: "Hack Squat", sets: 3, reps: 10, completed: false },
+      { name: "Walking Lunges", sets: 3, reps: 12, completed: false },
+      { name: "Seated Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
     day: "Day 25: Chest & Back",
     exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
+      { name: "Incline BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Cable Flys (low to high)", sets: 3, reps: 12, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Low Row", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 26: Delts & Arms",
     exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
+      { name: "BB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Upright Rows", sets: 3, reps: 12, completed: false },
+      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12, completed: false },
+      { name: "BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Close Grip Bench", sets: 3, reps: 10, completed: false },
+      { name: "Incline DB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Straight Bar Extension", sets: 3, reps: 12, completed: false },
     ],
   },
   {
     day: "Day 27: Legs",
     exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
+      { name: "Deadlift", sets: 4, reps: 8, completed: false },
+      { name: "Leg Curl", sets: 3, reps: 12, completed: false },
+      { name: "DB RDL", sets: 3, reps: 10, completed: false },
+      { name: "Leg Press", sets: 3, reps: 10, completed: false },
+      { name: "Standing Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
@@ -939,68 +1083,68 @@ const workoutProgram = [
   {
     day: "Day 29: Push",
     exercises: [
-      { name: "Pec Deck", sets: 3, reps: 10 },
-      { name: "Flat BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Lateral Raises", sets: 3, reps: 12 },
-      { name: "DB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Rope Extension", sets: 3, reps: 12 },
-      { name: "BB Skullcrusher", sets: 3, reps: 10 },
+      { name: "Pec Deck", sets: 3, reps: 10, completed: false },
+      { name: "Flat BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Lateral Raises", sets: 3, reps: 12, completed: false },
+      { name: "DB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Rope Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Skullcrusher", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 30: Pull",
     exercises: [
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 12 },
-      { name: "Wide Grip Pulldown", sets: 3, reps: 10 },
-      { name: "Seated Cable Row (close)", sets: 3, reps: 10 },
-      { name: "Cable Rear Delt Fly", sets: 3, reps: 12 },
-      { name: "Cable BB Curl", sets: 3, reps: 10 },
-      { name: "Cable Hammer Curl", sets: 3, reps: 10 },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 12, completed: false },
+      { name: "Wide Grip Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "Seated Cable Row (close)", sets: 3, reps: 10, completed: false },
+      { name: "Cable Rear Delt Fly", sets: 3, reps: 12, completed: false },
+      { name: "Cable BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Cable Hammer Curl", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 31: Legs",
     exercises: [
-      { name: "Leg Extension", sets: 3, reps: 12 },
-      { name: "BB Squat", sets: 4, reps: 8 },
-      { name: "Hack Squat", sets: 3, reps: 10 },
-      { name: "Walking Lunges", sets: 3, reps: 12 },
-      { name: "Seated Calf Raise", sets: 4, reps: 15 },
+      { name: "Leg Extension", sets: 3, reps: 12, completed: false },
+      { name: "BB Squat", sets: 4, reps: 8, completed: false },
+      { name: "Hack Squat", sets: 3, reps: 10, completed: false },
+      { name: "Walking Lunges", sets: 3, reps: 12, completed: false },
+      { name: "Seated Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
   {
     day: "Day 32: Chest & Back",
     exercises: [
-      { name: "Incline BB Bench", sets: 3, reps: 10 },
-      { name: "Flat DB Bench", sets: 3, reps: 10 },
-      { name: "Cable Flys (low to high)", sets: 3, reps: 12 },
-      { name: "Straight Arm Pulldown", sets: 3, reps: 10 },
-      { name: "BB Row", sets: 3, reps: 10 },
-      { name: "Low Row", sets: 3, reps: 10 },
+      { name: "Incline BB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Flat DB Bench", sets: 3, reps: 10, completed: false },
+      { name: "Cable Flys (low to high)", sets: 3, reps: 12, completed: false },
+      { name: "Straight Arm Pulldown", sets: 3, reps: 10, completed: false },
+      { name: "BB Row", sets: 3, reps: 10, completed: false },
+      { name: "Low Row", sets: 3, reps: 10, completed: false },
     ],
   },
   {
     day: "Day 33: Delts & Arms",
     exercises: [
-      { name: "BB Shoulder Press", sets: 3, reps: 10 },
-      { name: "Upright Rows", sets: 3, reps: 12 },
-      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12 },
-      { name: "BB Curl", sets: 3, reps: 10 },
-      { name: "Close Grip Bench", sets: 3, reps: 10 },
-      { name: "Incline DB Curl", sets: 3, reps: 10 },
-      { name: "Straight Bar Extension", sets: 3, reps: 12 },
+      { name: "BB Shoulder Press", sets: 3, reps: 10, completed: false },
+      { name: "Upright Rows", sets: 3, reps: 12, completed: false },
+      { name: "Rear Delt Fly (DB)", sets: 3, reps: 12, completed: false },
+      { name: "BB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Close Grip Bench", sets: 3, reps: 10, completed: false },
+      { name: "Incline DB Curl", sets: 3, reps: 10, completed: false },
+      { name: "Straight Bar Extension", sets: 3, reps: 12, completed: false },
     ],
   },
   {
     day: "Day 34: Legs",
     exercises: [
-      { name: "Deadlift", sets: 4, reps: 8 },
-      { name: "Leg Curl", sets: 3, reps: 12 },
-      { name: "DB RDL", sets: 3, reps: 10 },
-      { name: "Leg Press", sets: 3, reps: 10 },
-      { name: "Standing Calf Raise", sets: 4, reps: 15 },
+      { name: "Deadlift", sets: 4, reps: 8, completed: false },
+      { name: "Leg Curl", sets: 3, reps: 12, completed: false },
+      { name: "DB RDL", sets: 3, reps: 10, completed: false },
+      { name: "Leg Press", sets: 3, reps: 10, completed: false },
+      { name: "Standing Calf Raise", sets: 4, reps: 15, completed: false },
     ],
   },
 ];

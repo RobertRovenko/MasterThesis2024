@@ -6,67 +6,149 @@ import {
   PanResponder,
   TouchableOpacity,
   ScrollView,
-  ImageBackground,
   Dimensions,
+  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import workoutProgram from "../components/workoutPrograms";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
-import { FontAwesome } from "@expo/vector-icons"; // assuming you're using Expo
-import Icon from "react-native-vector-icons/FontAwesome"; // Import FontAwesome icon component
-import {
-  saveCompletedExercises,
-  loadCompletedExercises,
-} from "../components/workoutStorage";
+import { useNavigation } from "@react-navigation/native";
+import { FontAwesome } from "@expo/vector-icons";
+import Icon from "react-native-vector-icons/FontAwesome";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Home = ({}) => {
+const Home = () => {
   const [completedExercises, setCompletedExercises] = useState({});
-  const [currentPage, setCurrentPage] = useState(0); // Current page index
+  const [currentPage, setCurrentPage] = useState(0);
+  const [showCongratulation, setShowCongratulation] = useState(false);
 
   const totalPages = workoutProgram.length;
   const screenHeight = Dimensions.get("window").height;
-  const navigation = useNavigation(); // Initialize useNavigation hook
+  const navigation = useNavigation();
 
   useEffect(() => {
     const loadInitialData = async () => {
-      const initialCompletedExercises = await loadCompletedExercises();
-      setCompletedExercises(initialCompletedExercises);
+      try {
+        const initialCompletedExercises = await loadCompletedExercises();
+        if (initialCompletedExercises) {
+          setCompletedExercises(initialCompletedExercises);
+        } else {
+          initializeCompletedExercises();
+        }
+
+        // Load current day from local storage and set it as the initial currentPage state
+        const currentDay = await AsyncStorage.getItem("currentDay");
+        if (currentDay !== null) {
+          // Check if all exercises for the current day are completed
+          const isCurrentDayCompleted =
+            initialCompletedExercises &&
+            workoutProgram[currentDay].exercises.every(
+              (_, index) => initialCompletedExercises[currentDay][index]
+            );
+
+          // If all exercises for the current day are completed, find the next incomplete day
+          if (isCurrentDayCompleted) {
+            let nextPage = parseInt(currentDay, 10) + 1;
+            while (
+              nextPage < totalPages &&
+              workoutProgram[nextPage].exercises.every(
+                (_, index) => initialCompletedExercises[nextPage][index]
+              )
+            ) {
+              nextPage++;
+            }
+            setCurrentPage(nextPage);
+          } else {
+            setCurrentPage(JSON.parse(currentDay));
+          }
+        }
+      } catch (error) {
+        console.error("Error loading initial data:", error);
+      }
     };
+
     loadInitialData();
   }, []);
 
-  useEffect(() => {
-    const initializeCompletedExercises = () => {
-      const initialCompletedExercises = {};
-      workoutProgram.forEach((day, index) => {
-        initialCompletedExercises[index] = [];
-      });
-      setCompletedExercises(initialCompletedExercises);
-    };
-    initializeCompletedExercises();
-  }, []);
-  const markExerciseComplete = (dayIndex, exerciseName) => {
+  const loadCompletedExercises = async () => {
+    try {
+      const data = await AsyncStorage.getItem("completedExercises");
+      if (data !== null) {
+        return JSON.parse(data);
+      }
+      return null;
+    } catch (error) {
+      console.error("Error loading completed exercises:", error);
+      return null;
+    }
+  };
+
+  const saveCompletedExercises = async (data) => {
+    try {
+      await AsyncStorage.setItem("completedExercises", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error saving completed exercises:", error);
+    }
+  };
+
+  const initializeCompletedExercises = () => {
+    const initialCompletedExercises = {};
+    workoutProgram.forEach((day, index) => {
+      initialCompletedExercises[index] = [];
+    });
+    setCompletedExercises(initialCompletedExercises);
+    saveCompletedExercises(initialCompletedExercises);
+  };
+  const saveToLocalStorage = async (data) => {
+    try {
+      await AsyncStorage.setItem("completedExercises", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error saving data to local storage:", error);
+    }
+  };
+
+  const markExerciseComplete = async (dayIndex, exerciseIndex) => {
     setCompletedExercises((prevCompletedExercises) => {
       const updatedCompletedExercises = { ...prevCompletedExercises };
-      if (!updatedCompletedExercises[dayIndex]) {
+      // Ensure that the dayIndex exists in updatedCompletedExercises before accessing it
+      if (!(dayIndex in updatedCompletedExercises)) {
         updatedCompletedExercises[dayIndex] = [];
       }
+      // Ensure that the exerciseIndex exists in updatedCompletedExercises[dayIndex] before accessing it
+      if (!(exerciseIndex in updatedCompletedExercises[dayIndex])) {
+        updatedCompletedExercises[dayIndex][exerciseIndex] = false;
+      }
+      updatedCompletedExercises[dayIndex][exerciseIndex] =
+        !updatedCompletedExercises[dayIndex][exerciseIndex];
+      saveToLocalStorage(updatedCompletedExercises); // Save completed exercises to local storage
 
-      const updatedWorkoutProgram = [...workoutProgram];
-      updatedWorkoutProgram[dayIndex].exercises = updatedWorkoutProgram[
-        dayIndex
-      ].exercises.map((exercise) => {
-        if (exercise.name === exerciseName) {
-          return { ...exercise, completed: !exercise.completed };
-        }
-        return exercise;
-      });
+      // Check if all exercises for the day are completed
+      const allExercisesCompleted = workoutProgram[dayIndex].exercises.every(
+        (_, index) => updatedCompletedExercises[dayIndex][index]
+      );
 
-      // No need to update workoutProgram state here
+      // If all exercises for the day are completed, show congratulations alert
+      if (allExercisesCompleted) {
+        setShowCongratulation(true);
+      } else {
+        setShowCongratulation(false); // Hide congratulations alert if any exercise is unmarked
+      }
+
       return updatedCompletedExercises;
     });
   };
+
+  useEffect(() => {
+    const saveCurrentDayToLocalStorage = async () => {
+      try {
+        await AsyncStorage.setItem("currentDay", JSON.stringify(currentPage));
+      } catch (error) {
+        console.error("Error saving current day to local storage:", error);
+      }
+    };
+
+    saveCurrentDayToLocalStorage();
+  }, [currentPage]);
 
   const panResponder = useRef(
     PanResponder.create({
@@ -74,14 +156,11 @@ const Home = ({}) => {
       onPanResponderMove: (evt, gestureState) => {},
       onPanResponderRelease: (_, gestureState) => {
         const { dx } = gestureState;
-        // Swipe right if not on the first page
         if (dx > 50) {
           setCurrentPage((prevPage) =>
             prevPage > 0 ? prevPage - 1 : prevPage
           );
-        }
-        // Swipe left if not on the last page
-        else if (dx < -50) {
+        } else if (dx < -50) {
           setCurrentPage((prevPage) =>
             prevPage < totalPages - 1 ? prevPage + 1 : prevPage
           );
@@ -112,21 +191,23 @@ const Home = ({}) => {
                     <View style={styles.exerciseInfo}>
                       <View style={{ marginLeft: 20 }}>
                         <Text style={styles.exerciseName}>{exercise.name}</Text>
-                        <Text style={styles.exerciseDetails}>
-                          Sets: {exercise.sets} · Reps: {exercise.reps}
-                        </Text>
+                        {exercise.sets !== null && exercise.reps !== null && (
+                          <Text style={styles.exerciseDetails}>
+                            Sets: {exercise.sets} · Reps: {exercise.reps}
+                          </Text>
+                        )}
                       </View>
                       <TouchableOpacity
                         style={[styles.completeButton]}
-                        onPress={() =>
-                          markExerciseComplete(currentPage, exercise.name)
-                        }
+                        onPress={() => markExerciseComplete(currentPage, index)}
                       >
                         <View style={{ padding: 10 }}>
-                          {/* Adjust padding to increase touch area */}
                           <FontAwesome
                             name={
-                              exercise.completed ? "check-square" : "square"
+                              completedExercises[currentPage] &&
+                              completedExercises[currentPage][index]
+                                ? "check-square"
+                                : "square"
                             }
                             size={30}
                             color="white"
@@ -148,6 +229,36 @@ const Home = ({}) => {
     navigation.navigate("WorkoutDetails", { exercise });
   };
 
+  useEffect(() => {
+    if (showCongratulation) {
+      Alert.alert(
+        "Congratulations!",
+        "You have completed all exercises for today!",
+        [
+          {
+            text: "OK",
+            onPress: async () => {
+              setShowCongratulation(false);
+              const nextDayIndex =
+                currentPage < totalPages - 1 ? currentPage + 1 : currentPage;
+              setCurrentPage(nextDayIndex);
+              await AsyncStorage.setItem(
+                "currentDay",
+                JSON.stringify(nextDayIndex)
+              );
+            },
+          },
+        ],
+        { cancelable: false }
+      );
+    }
+  }, [showCongratulation, currentPage, totalPages]);
+
+  // Save completed exercises to local storage whenever it changes
+  useEffect(() => {
+    saveToLocalStorage(completedExercises);
+  }, [completedExercises]);
+
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={styles.header}>
@@ -162,8 +273,8 @@ const Home = ({}) => {
           style={{
             position: "absolute",
             bottom: 40,
-            left: "21.5%", // Center horizontally
-            color: "white", // Text color
+            left: "21.5%",
+            color: "white",
             fontWeight: "bold",
           }}
         >
@@ -215,7 +326,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 10, // Add vertical padding
+    paddingVertical: 10,
   },
   exerciseName: {
     fontSize: 20,
@@ -274,11 +385,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   completeButton: {
-    paddingHorizontal: 5, // Add horizontal padding
+    paddingHorizontal: 5,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 5, // Add vertical padding
+    paddingTop: 5,
   },
   completeButtonText: {
     color: "white",
@@ -289,7 +400,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   icon: {
-    marginHorizontal: 10, // Add space between icons
+    marginHorizontal: 10,
   },
 });
 

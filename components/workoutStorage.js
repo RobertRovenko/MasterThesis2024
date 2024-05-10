@@ -8,21 +8,33 @@ const saveCompletedExercises = async (completedExercises) => {
     );
   } catch (error) {
     console.error("Error saving completed exercises:", error);
+    throw error; // Re-throw the error to handle it in the calling code
   }
 };
 
-const loadCompletedExercises = async () => {
+const loadCompletedExercises = async (workoutProgram) => {
   try {
     const completedExercisesData = await AsyncStorage.getItem(
       "completedExercises"
     );
     if (completedExercisesData !== null) {
-      return JSON.parse(completedExercisesData);
+      const completedExercises = JSON.parse(completedExercisesData);
+      // Update workoutProgram with completed exercises from AsyncStorage
+      workoutProgram.forEach((day) => {
+        day.exercises.forEach((exercise) => {
+          const completed = completedExercises[exercise.name];
+          if (completed !== undefined) {
+            exercise.completed = completed;
+          }
+        });
+      });
+      return workoutProgram;
     }
+    return workoutProgram; // Return the original workoutProgram if no data found
   } catch (error) {
     console.error("Error loading completed exercises:", error);
+    throw error; // Re-throw the error to handle it in the calling code
   }
-  return {}; // Return empty object if no data found
 };
 
 export { saveCompletedExercises, loadCompletedExercises };

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import {
   Image,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LandingPage = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -21,6 +22,25 @@ const LandingPage = ({ navigation }) => {
 
   const windowHeight = Dimensions.get("window").height;
   const modalHeight = windowHeight * 0.7; // Set modal height to 70% of window height
+
+  useEffect(() => {
+    const checkIfFirstTime = async () => {
+      try {
+        const hasVisitedBefore = await AsyncStorage.getItem("hasVisited");
+        if (!hasVisitedBefore) {
+          openModal(); // Show the modal if it's the first time
+          await AsyncStorage.setItem("hasVisited", "true");
+        } else {
+          // Redirect to the Home screen if the user has visited before
+          navigation.navigate("Home");
+        }
+      } catch (error) {
+        console.error("Error checking if first time:", error);
+      }
+    };
+
+    checkIfFirstTime();
+  }, []);
 
   const openModal = () => {
     setModalVisible(true);
