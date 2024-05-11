@@ -53,12 +53,16 @@ const WorkoutDetails = () => {
         <Image source={images[currentImageIndex]} style={styles.image} />
       </View>
       <SafeAreaView style={styles.header}>
-        <TouchableOpacity onPress={handleBackPress}>
+        <TouchableOpacity
+          onPress={handleBackPress}
+          hitSlop={{ top: 40, bottom: 40, left: 40, right: 40 }}
+        >
           <View style={styles.circle}>
             <Icon style={styles.backbutton} name="chevron-left" color="black" />
           </View>
         </TouchableOpacity>
       </SafeAreaView>
+
       <ScrollView style={styles.scrollView}>
         <View style={styles.exerciseDetailsContainer}>
           <Text style={styles.exerciseName}>{exercise.name}</Text>
@@ -92,14 +96,12 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    backgroundColor: "white",
     height: 350,
-    paddingLeft: 20,
-    zIndex: -2,
+    padding: 30,
   },
   image: {
-    height: 300,
-    width: "75%",
+    height: 350,
+    width: "100%",
     position: "absolute",
     zIndex: -1,
     alignSelf: "center",
@@ -133,6 +135,7 @@ const styles = StyleSheet.create({
   detailsText: {
     color: "white",
     marginBottom: 10,
+    textAlign: "center",
   },
   buttonText: {
     color: "#F53769",
@@ -140,7 +143,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 10,
   },
-  circle: {},
+  circle: {
+    backgroundColor: "rgba(255, 255, 255, 0.7)", // 75% opacity
+    paddingLeft: 9,
+    paddingRight: 13,
+    paddingVertical: 7,
+    borderRadius: 100,
+  },
 });
 
 export default WorkoutDetails;
