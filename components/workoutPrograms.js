@@ -170,7 +170,7 @@ const workoutProgram = [
           "An effective alternative to the Close Grip Pulldown is the Close Grip Seated Row. This exercise also targets the middle back and biceps but involves pulling a close grip handle towards the lower chest while seated and keeping the back straight.",
       },
       {
-        name: "BB Row",
+        name: "Barebell Row",
         image1: require("../demonstration/back/bbRow1.jpg"),
         image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
@@ -229,7 +229,6 @@ const workoutProgram = [
         reps: 10,
         tip: "Medium Sets",
         completed: false,
-
         description:
           "The Cable Hammer Curl targets the brachialis and brachioradialis muscles of the forearm, as well as the biceps. It's performed by holding cable attachments with a neutral grip and curling them towards the shoulders while keeping the elbows stationary.",
         replacement:
@@ -340,6 +339,8 @@ const workoutProgram = [
       },
       {
         name: "Incline Smith Machine Press",
+        image1: require("../demonstration/chest/inclineSmithBenchPress1.jpg"),
+        image2: require("../demonstration/chest/inclineSmithBenchPress2.jpg"),
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -351,11 +352,12 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
         completed: false,
-
         description:
           "The Straight Arm Pulldown targets the lats and upper back. It's performed by pulling a cable attachment down with straight arms until the hands reach thigh level, then returning to the starting position.",
         replacement:
@@ -363,6 +365,8 @@ const workoutProgram = [
       },
       {
         name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -375,11 +379,12 @@ const workoutProgram = [
       },
       {
         name: "Low Row",
+        image1: require("../demonstration/back/seatedCableRow1.jpg"),
+        image2: require("../demonstration/back/seatedCableRow2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
         completed: false,
-
         description:
           "The Low Row targets the middle back, lats, and biceps. It's performed by sitting at a low row machine, grabbing the handles, and pulling them towards the lower abdomen while keeping the back straight.",
         replacement:
@@ -391,7 +396,9 @@ const workoutProgram = [
     day: "Day 5: Delts & Arms",
     exercises: [
       {
-        name: "BB Shoulder Press",
+        name: "Barebell Shoulder Press",
+        image1: require("../demonstration/shoulders/bbShoulderPress1.jpg"),
+        image2: require("../demonstration/shoulders/bbShoulderPress2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -403,7 +410,7 @@ const workoutProgram = [
           "An alternative to the Barbell Shoulder Press is the Dumbbell Shoulder Press. This exercise also targets the shoulders but involves using dumbbells instead of a barbell, allowing for greater range of motion and unilateral training.",
       },
       {
-        name: "Upright Rows",
+        name: "UOPDATE ",
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -415,7 +422,7 @@ const workoutProgram = [
           "A suitable alternative to Upright Rows is the Lateral Raise. This exercise also targets the shoulders but involves raising dumbbells to the sides until they reach shoulder height, maintaining a slight bend in the elbows throughout.",
       },
       {
-        name: "Rear Delt Fly (DB)",
+        name: "Rear Delt Fly UPDATE",
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -427,12 +434,11 @@ const workoutProgram = [
           "An alternative to the Rear Delt Fly with Dumbbells is the Face Pull. This exercise also targets the rear deltoids and upper back but involves pulling a rope attachment towards the face while keeping the elbows high and wide.",
       },
       {
-        name: "BB Curl",
+        name: "Barebell Curl",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
         completed: false,
-
         description:
           "The Barbell Curl targets the biceps. It's performed by holding a barbell with an underhand grip and curling it upwards towards the shoulders while keeping the elbows close to the body.",
         replacement:
@@ -451,7 +457,7 @@ const workoutProgram = [
           "A suitable alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves lowering the body by bending the elbows and then pressing back up.",
       },
       {
-        name: "Incline DB Curl",
+        name: "Incline Dumbbell Curl UPDATEEEE",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -504,16 +510,16 @@ const workoutProgram = [
           "An alternative to the Leg Curl is the Swiss Ball Hamstring Curl. This exercise also targets the hamstrings but involves lying on your back with your feet on a Swiss ball and curling the ball towards your buttocks.",
       },
       {
-        name: "DB RDL",
+        name: "BYT UT DENNA",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
         completed: false,
 
         description:
-          "The Dumbbell Romanian Deadlift targets the hamstrings and lower back. It's performed by holding dumbbells in front of the thighs, bending at the hips while keeping the back straight, and lowering the dumbbells towards the floor.",
+          "The Deadlift targets the hamstrings and lower back. It's performed by holding dumbbells in front of the thighs, bending at the hips while keeping the back straight, and lowering the barebell towards the floor.",
         replacement:
-          "A suitable alternative to the Dumbbell Romanian Deadlift is the Barbell Hip Thrust. This exercise also targets the hamstrings and glutes but involves sitting on the floor with a barbell across the hips and thrusting the hips upwards.",
+          "A suitable alternative to the Deadlift is the Barbell Hip Thrust. This exercise also targets the hamstrings and glutes but involves sitting on the floor with a barbell across the hips and thrusting the hips upwards.",
       },
       {
         name: "Leg Press",
@@ -570,7 +576,7 @@ const workoutProgram = [
           "An effective alternative to the Pec Deck machine is the Cable Crossover. This exercise also targets the chest muscles but involves standing in front of cable pulleys and crossing the hands over the body in a fly motion.",
       },
       {
-        name: "Flat BB Bench",
+        name: "Flat Barebell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -582,7 +588,7 @@ const workoutProgram = [
           "An alternative to the Flat Barbell Bench Press is the Dumbbell Bench Press. This exercise also targets the chest, shoulders, and triceps but involves using dumbbells instead of a barbell, allowing for greater range of motion and muscle activation.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -606,7 +612,7 @@ const workoutProgram = [
           "The Cable Lateral Raises is a great alternative to the normal Lateral Raises. The primary difference is the constant tension provided by the cable throughout the movement, which can enhance muscle activation and growth.",
       },
       {
-        name: "DB Shoulder Press",
+        name: "Dumbbell Shoulder Press",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -630,7 +636,7 @@ const workoutProgram = [
           "A suitable alternative to Rope Extension is the Close Grip Bench Press. This compound exercise not only targets the triceps but also engages the chest and shoulders. It involves using a barbell with a narrow grip, lowering it to the chest and pressing it back up.",
       },
       {
-        name: "BB Skullcrusher",
+        name: "Barebell Skullcrusher",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -647,7 +653,7 @@ const workoutProgram = [
     day: "Day 9: Pull",
     exercises: [
       {
-        name: "BB Row",
+        name: "Barebell Row",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -660,6 +666,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -707,7 +715,7 @@ const workoutProgram = [
           "An effective alternative to the Cable Rear Delt Fly is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "Cable BB Curl",
+        name: "Cable Barebell Curl",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -749,7 +757,7 @@ const workoutProgram = [
           "A suitable alternative to the Leg Extension is the Bulgarian Split Squat. This exercise also targets the quadriceps but involves performing a split squat movement with one leg elevated behind you on a bench or platform.",
       },
       {
-        name: "BB Squat",
+        name: "Barebell Squat",
         sets: 4,
         reps: 8,
         tip: "Heavy Sets",
@@ -803,7 +811,7 @@ const workoutProgram = [
     day: "Day 11: Chest & Back",
     exercises: [
       {
-        name: "Incline BB Bench",
+        name: "Incline Barebell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -815,7 +823,7 @@ const workoutProgram = [
           "A suitable alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and muscle activation.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -840,6 +848,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -851,7 +861,9 @@ const workoutProgram = [
           "An alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves bending the elbows and pulling the bar down to the chest instead of keeping the arms straight.",
       },
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -881,7 +893,7 @@ const workoutProgram = [
     day: "Day 12: Delts & Arms",
     exercises: [
       {
-        name: "BB Shoulder Press",
+        name: "Barebell Shoulder Press",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -905,7 +917,7 @@ const workoutProgram = [
           "An alternative to Upright Rows is the Lateral Raise. This exercise also targets the shoulders but involves lifting dumbbells or cables out to the sides instead of pulling a barbell upwards.",
       },
       {
-        name: "Rear Delt Fly (DB)",
+        name: "Rear Delt Fly)",
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -917,7 +929,7 @@ const workoutProgram = [
           "An effective alternative to the Rear Delt Fly with Dumbbells is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "BB Curl",
+        name: "Barebell Curl",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -941,7 +953,7 @@ const workoutProgram = [
           "An effective alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves dipping down and pushing back up using a dip bar or parallel bars.",
       },
       {
-        name: "Incline DB Curl",
+        name: "Incline Dumbbell Curl",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -993,7 +1005,7 @@ const workoutProgram = [
           "An alternative to the Leg Curl is the Swiss Ball Hamstring Curl. This bodyweight exercise also targets the hamstrings but involves lying on your back with feet on a Swiss ball and curling the ball towards your glutes.",
       },
       {
-        name: "DB RDL",
+        name: "BYT UT DENNA",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1046,7 +1058,7 @@ const workoutProgram = [
           "An alternative to the Pec Deck machine is the Cable Crossover. This exercise also targets the chest but involves pulling cables across the body from high to low or vice versa.",
       },
       {
-        name: "Flat BB Bench",
+        name: "Flat Barebell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1057,7 +1069,7 @@ const workoutProgram = [
           "An alternative to the Flat Barbell Bench Press is the Flat Dumbbell Bench Press. This exercise also targets the chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1079,7 +1091,7 @@ const workoutProgram = [
           "An alternative to Lateral Raises is the Cable Lateral Raise. This exercise also targets the lateral deltoids but involves using cables instead of dumbbells, providing constant tension throughout the movement.",
       },
       {
-        name: "DB Shoulder Press",
+        name: "Dumbbell Shoulder Press",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1101,7 +1113,7 @@ const workoutProgram = [
           "An alternative to Rope Tricep Extension is the Overhead Tricep Extension with a Dumbbell. This exercise also targets the triceps but involves holding a dumbbell with both hands overhead and lowering it behind the head.",
       },
       {
-        name: "BB Skullcrusher",
+        name: "Barebell Skullcrusher",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1117,7 +1129,9 @@ const workoutProgram = [
     day: "Day 16: Pull",
     exercises: [
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1129,6 +1143,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 12,
         tip: "Light Sets",
@@ -1172,7 +1188,7 @@ const workoutProgram = [
           "An alternative to Cable Rear Delt Flyes is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "Cable BB Curl",
+        name: "Cable Barebell Curl",
         sets: 3,
         reps: 10,
         tip: "Medium Sets",
@@ -1210,7 +1226,7 @@ const workoutProgram = [
           "An alternative to Leg Extensions is the Bulgarian Split Squat. This exercise also targets the quadriceps but involves standing with one foot elevated behind on a bench or platform and squatting downwards with the other leg.",
       },
       {
-        name: "BB Squat",
+        name: "Barebell Squat",
         sets: 4,
         reps: 8,
         completed: false,
@@ -1259,7 +1275,7 @@ const workoutProgram = [
     day: "Day 18: Chest & Back",
     exercises: [
       {
-        name: "Incline BB Bench",
+        name: "Incline Barebell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1270,7 +1286,7 @@ const workoutProgram = [
           "An alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell for greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1293,6 +1309,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -1303,7 +1321,9 @@ const workoutProgram = [
           "An alternative to Straight Arm Pulldowns is the Lat Pulldown. This exercise also targets the lats but involves sitting and pulling a bar or handle down towards the chest while leaning slightly back.",
       },
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -1330,7 +1350,7 @@ const workoutProgram = [
     day: "Day 19: Delts & Arms",
     exercises: [
       {
-        name: "BB Shoulder Press",
+        name: "Barebell Shoulder Press",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1352,7 +1372,7 @@ const workoutProgram = [
           "An alternative to Upright Rows is the Lateral Raise. This exercise also targets the shoulders but involves lifting dumbbells or cables out to the sides instead of pulling a barbell upwards.",
       },
       {
-        name: "Rear Delt Fly (DB)",
+        name: "Rear Delt Fly",
         sets: 3,
         reps: 12,
         completed: false,
@@ -1363,7 +1383,7 @@ const workoutProgram = [
           "An effective alternative to the Rear Delt Fly with Dumbbells is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "BB Curl",
+        name: "Barebell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1385,7 +1405,7 @@ const workoutProgram = [
           "An effective alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves dipping down and pushing back up using a dip bar or parallel bars.",
       },
       {
-        name: "Incline DB Curl",
+        name: "Incline Dumbbell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1434,7 +1454,7 @@ const workoutProgram = [
           "An alternative to the Leg Curl is the Swiss Ball Leg Curl. This bodyweight exercise also targets the hamstrings but involves lying on your back with your feet on a Swiss ball and curling the ball towards your buttocks.",
       },
       {
-        name: "DB RDL",
+        name: " BYT UT DHENNAJL",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1487,7 +1507,7 @@ const workoutProgram = [
           "An alternative to the Pec Deck is the Cable Crossover. This exercise also targets the chest but involves standing between two cable stations with D-handles attached, then crossing the hands over the body to bring the handles together.",
       },
       {
-        name: "Flat BB Bench",
+        name: "Flat Barebell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1498,7 +1518,7 @@ const workoutProgram = [
           "An alternative to the Flat Barbell Bench Press is the Flat Dumbbell Bench Press. This exercise also targets the chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1520,7 +1540,7 @@ const workoutProgram = [
           "An alternative to Lateral Raises is the Cable Lateral Raise. This exercise also targets the side deltoids but involves using a cable machine with D-handles attached and performing the same lifting motion.",
       },
       {
-        name: "DB Shoulder Press",
+        name: "Dumbbell Shoulder Press",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1542,7 +1562,7 @@ const workoutProgram = [
           "An alternative to Rope Tricep Extension is the Overhead Tricep Extension. This exercise also targets the triceps but involves holding a dumbbell or barbell overhead with both hands and lowering it behind the head, then extending the arms to raise the weight back up.",
       },
       {
-        name: "BB Skullcrusher",
+        name: "Barebell Skullcrusher",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1558,7 +1578,9 @@ const workoutProgram = [
     day: "Day 23: Pull",
     exercises: [
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -1570,6 +1592,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 12,
         completed: false,
@@ -1613,7 +1637,7 @@ const workoutProgram = [
           "An alternative to the Cable Rear Delt Fly is the Dumbbell Rear Delt Fly. This exercise also targets the rear deltoids but involves lying face down on an incline bench with dumbbells in hand, then lifting the dumbbells out to the sides while keeping the arms straight.",
       },
       {
-        name: "Cable BB Curl",
+        name: "Cable Barebell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1651,7 +1675,7 @@ const workoutProgram = [
           "An alternative to the Leg Extension is the Dumbbell Step-Up. This exercise also targets the quadriceps but involves stepping onto a bench or platform with one foot while pushing through the heel to straighten the leg, then lowering back down and repeating with the other leg.",
       },
       {
-        name: "BB Squat",
+        name: "Barebell Squat",
         sets: 4,
         reps: 8,
         completed: false,
@@ -1700,7 +1724,7 @@ const workoutProgram = [
     day: "Day 25: Chest & Back",
     exercises: [
       {
-        name: "Incline BB Bench",
+        name: "Incline Barebell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1711,7 +1735,7 @@ const workoutProgram = [
           "An alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1734,6 +1758,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -1744,7 +1770,9 @@ const workoutProgram = [
           "An alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves using a wide grip and pulling the bar down in front of the body towards the chest.",
       },
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -1771,7 +1799,7 @@ const workoutProgram = [
     day: "Day 26: Delts & Arms",
     exercises: [
       {
-        name: "BB Shoulder Press",
+        name: "Barebell Shoulder Press",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1804,7 +1832,7 @@ const workoutProgram = [
           "An effective alternative to the Rear Delt Fly with Dumbbells is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "BB Curl",
+        name: "Barebell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1826,7 +1854,7 @@ const workoutProgram = [
           "An effective alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves dipping down and pushing back up using a dip bar or parallel bars.",
       },
       {
-        name: "Incline DB Curl",
+        name: "Incline Dumbbell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1875,7 +1903,7 @@ const workoutProgram = [
           "An effective alternative to the Leg Curl is the Swiss Ball Leg Curl. This bodyweight exercise also targets the hamstrings but involves lying on your back with feet on a Swiss ball and curling the ball towards the buttocks.",
       },
       {
-        name: "DB RDL",
+        name: "BYT UT IGENNENENEN",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1928,7 +1956,7 @@ const workoutProgram = [
           "An alternative to the Pec Deck machine is the Dumbbell Fly. This exercise also targets the chest muscles but involves lying on a bench and lowering and raising dumbbells in a wide arc motion.",
       },
       {
-        name: "Flat BB Bench",
+        name: "Flat Barebell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1939,7 +1967,7 @@ const workoutProgram = [
           "An effective alternative to the Flat Barbell Bench Press is the Flat Dumbbell Bench Press. This exercise also targets the chest, shoulders, and triceps but allows for a greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1961,7 +1989,7 @@ const workoutProgram = [
           "An alternative to Lateral Raises is the Cable Lateral Raise. This exercise also targets the side deltoids but involves using a cable machine for constant tension throughout the movement.",
       },
       {
-        name: "DB Shoulder Press",
+        name: "Dumbbell Shoulder Press",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1983,7 +2011,7 @@ const workoutProgram = [
           "An alternative to Rope Tricep Extensions is the Overhead Tricep Extension. This exercise also targets the triceps but involves using a single dumbbell or barbell overhead, providing a different angle of resistance.",
       },
       {
-        name: "BB Skullcrusher",
+        name: "Barebell Skullcrusher",
         sets: 3,
         reps: 10,
         completed: false,
@@ -1999,7 +2027,9 @@ const workoutProgram = [
     day: "Day 30: Pull",
     exercises: [
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -2011,6 +2041,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 12,
         completed: false,
@@ -2054,7 +2086,7 @@ const workoutProgram = [
           "An effective alternative to the Cable Rear Delt Fly is the Bent-Over Reverse Fly. This dumbbell exercise also targets the rear deltoids and upper back but involves bending at the waist and lifting dumbbells out to the sides.",
       },
       {
-        name: "Cable BB Curl",
+        name: "Cable Barebell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2092,7 +2124,7 @@ const workoutProgram = [
           "An alternative to the Leg Extension is the Bulgarian Split Squat. This exercise also targets the quadriceps but involves performing a split squat with one leg elevated behind on a bench, promoting balance and stability.",
       },
       {
-        name: "BB Squat",
+        name: "Barebell Squat",
         sets: 4,
         reps: 8,
         completed: false,
@@ -2141,7 +2173,7 @@ const workoutProgram = [
     day: "Day 32: Chest & Back",
     exercises: [
       {
-        name: "Incline BB Bench",
+        name: "Incline Barebell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2152,7 +2184,7 @@ const workoutProgram = [
           "An alternative to the Incline Barbell Bench Press is the Incline Dumbbell Bench Press. This exercise also targets the upper chest but involves using dumbbells instead of a barbell, allowing for greater range of motion and individual muscle engagement.",
       },
       {
-        name: "Flat DB Bench",
+        name: "Flat Dumbbell Bench",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2175,6 +2207,8 @@ const workoutProgram = [
       },
       {
         name: "Straight Arm Pulldown",
+        image1: require("../demonstration/back/straightArmPulldown1.jpg"),
+        image2: require("../demonstration/back/straightArmPulldown2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -2185,7 +2219,9 @@ const workoutProgram = [
           "An effective alternative to the Straight Arm Pulldown is the Lat Pulldown. This exercise also targets the lats but involves pulling a bar down to the chest while seated, allowing for heavier weights and greater muscle activation.",
       },
       {
-        name: "BB Row",
+        name: "Barebell Row",
+        image1: require("../demonstration/back/bbRow1.jpg"),
+        image2: require("../demonstration/back/bbRow2.jpg"),
         sets: 3,
         reps: 10,
         completed: false,
@@ -2212,7 +2248,7 @@ const workoutProgram = [
     day: "Day 33: Delts & Arms",
     exercises: [
       {
-        name: "BB Shoulder Press",
+        name: "Barebell Shoulder Press",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2245,7 +2281,7 @@ const workoutProgram = [
           "An effective alternative to the Rear Delt Fly with Dumbbells is the Reverse Pec Deck Fly. This machine exercise also targets the rear deltoids and upper back but involves sitting facing the machine and pulling the handles towards each other behind the body.",
       },
       {
-        name: "BB Curl",
+        name: "Barebell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2267,7 +2303,7 @@ const workoutProgram = [
           "An effective alternative to the Close Grip Bench Press is the Tricep Dip. This bodyweight exercise also targets the triceps but involves dipping down and pushing back up using a dip bar or parallel bars.",
       },
       {
-        name: "Incline DB Curl",
+        name: "Incline Dumbbell Curl",
         sets: 3,
         reps: 10,
         completed: false,
@@ -2316,7 +2352,7 @@ const workoutProgram = [
           "An alternative to the Leg Curl is the Swiss Ball Leg Curl. This bodyweight exercise also targets the hamstrings but involves lying on your back with your feet on a Swiss ball and lifting your hips while curling the ball towards your glutes.",
       },
       {
-        name: "DB RDL",
+        name: "GEIGHWIGHGHWI RDL",
         sets: 3,
         reps: 10,
         completed: false,
