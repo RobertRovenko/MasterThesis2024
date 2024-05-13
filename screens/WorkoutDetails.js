@@ -66,9 +66,11 @@ const WorkoutDetails = () => {
       <ScrollView style={styles.scrollView}>
         <View style={styles.exerciseDetailsContainer}>
           <Text style={styles.exerciseName}>{exercise.name}</Text>
-          <Text style={styles.detailsText}>
-            Sets: {exercise.sets} • Reps: {exercise.reps}
-          </Text>
+          {exercise.sets != null && exercise.reps != null && (
+            <Text style={styles.detailsText}>
+              Sets: {exercise.sets} • Reps: {exercise.reps}
+            </Text>
+          )}
           <Text style={styles.detailsText}>{exercise.tip}</Text>
           <TouchableOpacity onPress={toggleDescription} style={styles.button}>
             <Text style={styles.buttonText}>Description</Text>
@@ -78,9 +80,11 @@ const WorkoutDetails = () => {
           )}
 
           <TouchableOpacity onPress={toggleReplacement}>
-            <Text style={[styles.buttonText, {}]}>Replacement</Text>
+            {exercise.replacement != null && (
+              <Text style={[styles.buttonText, {}]}>Replacement</Text>
+            )}
           </TouchableOpacity>
-          {expandedReplacement && (
+          {expandedReplacement && exercise.replacement != null && (
             <Text style={styles.detailsText}>{exercise.replacement}</Text>
           )}
         </View>
