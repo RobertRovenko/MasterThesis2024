@@ -2,13 +2,13 @@
   "expo": {
     "name": "30 Day Fitness",
     "slug": "FitnessGuru",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/appicon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splashscreen.png",
-      "resizeMode": "cover",
+      "image": "./assets/sscreen3.png",
+      "resizeMode": "contain",
       "backgroundColor": "#1D1A2F"
     },
     "assetBundlePatterns": [
@@ -18,7 +18,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 4,
+      "versionCode": 5,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appicon.png",
         "backgroundColor": "#ffffff"

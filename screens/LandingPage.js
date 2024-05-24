@@ -78,7 +78,7 @@ const LandingPage = ({ navigation }) => {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/sscreen.png")}
+      source={require("../assets/landingbackground.png")}
     >
       <View style={styles.container}>
         <Text style={styles.textLogo}>30 Day{"\n"}Fitness</Text>
