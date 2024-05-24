@@ -268,19 +268,17 @@ const Home = () => {
 
       {renderWorkoutCard()}
 
-      <View
-        style={[
-          styles.bottomView,
-          { alignItems: "center", justifyContent: "center" },
-        ]}
-        {...panResponder.panHandlers}
-      >
+      <View style={styles.bottomView} {...panResponder.panHandlers}>
         <Text
           style={{
+            position: "absolute",
+            bottom: 40,
+            left: 0,
+            right: 0,
             color: "white",
+            textAlign: "center",
+
             fontWeight: "bold",
-            flexDirection: "row",
-            alignItems: "center",
           }}
         >
           <Icon name="arrow-left" size={15} color="white" style={styles.icon} />

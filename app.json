@@ -7,9 +7,9 @@
     "icon": "./assets/appicon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/sscreen1.png",
+      "image": "./assets/splashscreen.png",
       "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1D1A2F"
     },
     "assetBundlePatterns": [
       "assets/**/*"
@@ -18,7 +18,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 2,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appicon.png",
         "backgroundColor": "#ffffff"
