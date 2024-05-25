@@ -20,6 +20,7 @@ const App = () => {
     OswaldBold: require("./assets/fonts/Oswald-Bold.ttf"),
   });
 
+  //help
   useEffect(() => {
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
